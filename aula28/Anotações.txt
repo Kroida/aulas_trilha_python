@@ -1,0 +1,5 @@
+strip() method
+
+The strip() method removes any leading, and trailing whitespaces.
+
+==========================================================================================
