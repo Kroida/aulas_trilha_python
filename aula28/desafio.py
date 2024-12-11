@@ -1,5 +1,6 @@
 import random
 import tkinter as tk
+from tkinter import messagebox
 
 # Instanciando janela
 root = tk.Tk()
@@ -42,9 +43,10 @@ def draw_secret_santa(participants):
 
 
 def display_results(results):
-    print('\nAmigo Secreto:')
-    for giver, receiver in results:
-        print(f'{giver} -> {receiver}')
+    # Combinar todos os pares em uma string formatada
+    message = '\n'.join(f'{giver} -> {receiver}' for giver, receiver in results)
+    # Exibir a mensagem no pop-up
+    messagebox.showinfo('Amigos Secretos', message)
 
 
 def shuffle():
@@ -86,6 +88,7 @@ text = tk.Text(
     font=('Arial', 14),
     bg='#2c2c2c',
     fg='#f7f7f7',
+    insertbackground= '#f7f7f7',
     width=30,
     height=10
 )
@@ -100,6 +103,8 @@ button = tk.Button(
     command=shuffle
 )
 button.pack(pady=5)
+
+root.mainloop()
 
 # def get_participants():
 #     participants = input('Digite os nomes dos participantes separados por vírgula: ').split(', ')
@@ -132,5 +137,3 @@ button.pack(pady=5)
 
 # if __name__ == '__main__':
 #     main()
-
-root.mainloop()
