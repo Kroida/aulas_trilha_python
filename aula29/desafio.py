@@ -8,12 +8,15 @@ dados_guardados = {}
 pontuacao_total = {}
 tentativas = 3
 rodada = 1
+main_frame = None  # Inicializando main_frame como global
 
 # Definindo cores
-BACKGROUND_COLOR = '#212121'
-TEXT_COLOR = '#00ff40'
-BUTTON_HOVER_COLOR = '#303030'
-BUTTON_ACTIVE_COLOR = '#404040'
+BACKGROUND_COLOR = '#1E1E2E'  # Cor de fundo mais escura e moderna
+TEXT_COLOR = '#50FA7B'  # Verde mais suave
+BUTTON_BG = '#2D2D3F'  # Cor base para botões
+BUTTON_HOVER_COLOR = '#3D3D4F'  # Cor quando passa o mouse
+BUTTON_ACTIVE_COLOR = '#4D4D5F'  # Cor quando clica
+ACCENT_COLOR = '#BD93F9'  # Cor de destaque roxa
 
 # Instanciando janela
 root = tk.Tk()
@@ -21,7 +24,7 @@ root.title('Jogo General')
 
 # Definindo o tamanho da janela
 largura = 800
-altura = 600
+altura = 800
 
 # Obtendo o tamanho da tela
 largura_tela = root.winfo_screenwidth()
@@ -36,6 +39,57 @@ root.geometry(f'{largura}x{altura}+{pos_x}+{pos_y}')
 
 # Configurando a cor de fundo da janela
 root.configure(bg=BACKGROUND_COLOR)
+
+# Criando um estilo personalizado para os botões
+class ModernButton(tk.Button):
+    def __init__(self, master=None, **kwargs):
+        super().__init__(master, **kwargs)
+        self.config(
+            bg=BUTTON_BG,
+            fg=TEXT_COLOR,
+            relief='flat',
+            borderwidth=0,
+            padx=20,
+            pady=10,
+            font=('Arial', 12, 'bold'),
+            activebackground=BUTTON_ACTIVE_COLOR,
+            activeforeground=TEXT_COLOR,
+            cursor='hand2'
+        )
+        self.bind('<Enter>', self.on_enter)
+        self.bind('<Leave>', self.on_leave)
+
+    def on_enter(self, e):
+        self['background'] = BUTTON_HOVER_COLOR
+
+    def on_leave(self, e):
+        self['background'] = BUTTON_BG
+
+# Configurar estilo para os checkbuttons
+style = ttk.Style()
+style.configure('Custom.TCheckbutton',
+                background=BACKGROUND_COLOR,
+                foreground=TEXT_COLOR)
+
+# Função para criar frame com borda arredondada
+def create_rounded_frame(parent, **kwargs):
+    frame = tk.Frame(parent, bg=BACKGROUND_COLOR, **kwargs)
+    canvas = tk.Canvas(frame, bg=BACKGROUND_COLOR, highlightthickness=0)
+    canvas.place(relx=0, rely=0, relwidth=1, relheight=1)
+    return frame
+
+# Função para criar título estilizado
+def create_title(parent, text):
+    title_frame = tk.Frame(parent, bg=BACKGROUND_COLOR)
+    title = tk.Label(
+        title_frame,
+        text=text,
+        font=('Arial', 24, 'bold'),
+        fg=ACCENT_COLOR,
+        bg=BACKGROUND_COLOR
+    )
+    title.pack(pady=20)
+    return title_frame
 
 # Função para criar representação visual do dado
 def criar_dado(parent, valor):
@@ -73,6 +127,7 @@ def on_leave(e):
 def calcular_pontuacao(dados_guardados):
     valores = sorted(dados_guardados.values())
     if len(dados_guardados) < 5:
+        messagebox.showinfo("Pontuação", "Nenhuma combinação especial encontrada.")
         return 0
 
     if valores in ([1, 2, 3, 4, 5], [2, 3, 4, 5, 6]):
@@ -87,8 +142,9 @@ def calcular_pontuacao(dados_guardados):
     elif len(set(valores)) == 1:
         messagebox.showinfo("Pontuação", "General! (+50 pontos)")
         return 50
-    messagebox.showinfo("Pontuação", "Nenhuma combinação especial encontrada.")
-    return 0
+    else:
+        messagebox.showinfo("Pontuação", "Nenhuma combinação especial encontrada.")
+        return 0
 
 def organizar_dados():
     global tentativas, dados, dados_guardados, rodada
@@ -103,119 +159,118 @@ def organizar_dados():
     atualizar_interface()
 
 def jogar_dados():
-    global tentativas
+    global main_frame, tentativas
     if tentativas <= 0:
         messagebox.showwarning("Aviso", "Você não tem mais tentativas!")
         return
 
-    # Criar uma nova janela para mostrar os dados
-    janela_dados = tk.Toplevel(root)
-    janela_dados.title("Jogar Dados")
-    janela_dados.geometry("500x600")
-    janela_dados.configure(bg=BACKGROUND_COLOR)
-    
-    # Frame principal
-    main_dados_frame = tk.Frame(janela_dados, bg=BACKGROUND_COLOR)
-    main_dados_frame.pack(expand=True, fill='both', padx=20, pady=20)
-    
+    if main_frame:
+        main_frame.destroy()
+
+    main_frame = create_rounded_frame(root)
+    main_frame.pack(expand=True, fill='both', padx=40, pady=20)
+
     # Título
-    titulo = tk.Label(
-        main_dados_frame,
-        text="Seus Dados",
-        font=('Arial', 16, 'bold'),
-        bg=BACKGROUND_COLOR,
-        fg=TEXT_COLOR
-    )
-    titulo.pack(pady=(0, 20))
+    title_frame = create_title(main_frame, 'Jogar Dados')
+    title_frame.pack(fill='x')
 
     # Frame para os dados
-    frame_dados = tk.Frame(main_dados_frame, bg=BACKGROUND_COLOR)
-    frame_dados.pack(pady=20)
+    dice_frame = tk.Frame(main_frame, bg=BACKGROUND_COLOR)
+    dice_frame.pack(pady=20)
+
+    # Variáveis para checkboxes
+    check_vars = {}
 
     # Mostrar os dados disponíveis
     for num, valor in dados.items():
-        frame_dado = tk.Frame(frame_dados, bg=BACKGROUND_COLOR)
-        frame_dado.pack(pady=10)
+        dice_container = tk.Frame(dice_frame, bg=BACKGROUND_COLOR)
+        dice_container.pack(pady=10)
         
         # Criar representação visual do dado
-        dado_visual = criar_dado(frame_dado, valor)
+        dado_visual = criar_dado(dice_container, valor)
         dado_visual.pack(side=tk.LEFT, padx=10)
         
         # Label com número do dado
         tk.Label(
-            frame_dado,
+            dice_container,
             text=f'Dado {num}',
             font=('Arial', 12),
             bg=BACKGROUND_COLOR,
             fg=TEXT_COLOR
         ).pack(side=tk.LEFT, padx=5)
         
-        # Checkbox estilizado
+        # Checkbox para seleção
         var = tk.BooleanVar()
+        check_vars[num] = var
         check = ttk.Checkbutton(
-            frame_dado,
+            dice_container,
             variable=var,
             style='Custom.TCheckbutton'
         )
         check.pack(side=tk.LEFT, padx=5)
-        frame_dado.var = var
-        frame_dado.num = num
+
+    # Frame para botões de ação
+    button_frame = tk.Frame(main_frame, bg=BACKGROUND_COLOR)
+    button_frame.pack(pady=20, fill='x')
 
     def confirmar_selecao():
         global dados, dados_guardados, tentativas
         
         # Coletar dados selecionados
-        for widget in frame_dados.winfo_children():
-            if hasattr(widget, 'var') and widget.var.get():
-                num = widget.num
-                if num in dados:
-                    dados_guardados[num] = dados.pop(num)
+        for num, var in check_vars.items():
+            if var.get() and num in dados:
+                dados_guardados[num] = dados.pop(num)
+
+        # Se não houver mais dados disponíveis, finalizar a rodada
+        if not dados:
+            organizar_dados()
+            show_main_menu()
+            return
 
         # Jogar novamente os dados não selecionados
         for num in dados:
             dados[num] = random.randint(1, 6)
 
         tentativas -= 1
-        janela_dados.destroy()
-        atualizar_interface()
+        
+        if tentativas <= 0:
+            # Calcular pontuação e iniciar nova rodada
+            organizar_dados()
+        
+        show_main_menu()  # Redirecionar para o menu principal
 
-    # Frame para botões
-    frame_botoes = tk.Frame(main_dados_frame, bg=BACKGROUND_COLOR)
-    frame_botoes.pack(pady=20)
+    # Botões de ação no centro
+    buttons_container = tk.Frame(button_frame, bg=BACKGROUND_COLOR)
+    buttons_container.pack(expand=True)
 
-    # Botões estilizados
-    botao_confirmar = tk.Button(
-        frame_botoes,
+    confirmar_button = ModernButton(
+        buttons_container,
         text="Confirmar Seleção",
-        command=confirmar_selecao,
-        font=('Arial', 12, 'bold'),
-        bg=BACKGROUND_COLOR,
-        fg=TEXT_COLOR,
-        relief='raised',
-        bd=2,
-        padx=20,
-        pady=10
+        command=confirmar_selecao
     )
-    botao_confirmar.pack(side=tk.LEFT, padx=10)
-    
-    botao_cancelar = tk.Button(
-        frame_botoes,
-        text="Cancelar",
-        command=janela_dados.destroy,
-        font=('Arial', 12),
-        bg=BACKGROUND_COLOR,
-        fg=TEXT_COLOR,
-        relief='raised',
-        bd=2,
-        padx=20,
-        pady=10
-    )
-    botao_cancelar.pack(side=tk.LEFT, padx=10)
+    confirmar_button.pack(side=tk.LEFT, padx=10)
 
-    # Adicionar efeitos hover aos botões
-    for botao in [botao_confirmar, botao_cancelar]:
-        botao.bind("<Enter>", on_enter)
-        botao.bind("<Leave>", on_leave)
+    # Informações do jogo
+    info_frame = tk.Frame(main_frame, bg=BACKGROUND_COLOR)
+    info_frame.pack(pady=20)
+
+    rodada_label = tk.Label(
+        info_frame,
+        text=f'Rodada: {rodada}',
+        font=('Arial', 12),
+        fg=TEXT_COLOR,
+        bg=BACKGROUND_COLOR
+    )
+    rodada_label.pack(side='left', padx=20)
+
+    tentativas_label = tk.Label(
+        info_frame,
+        text=f'Tentativas restantes: {tentativas}',
+        font=('Arial', 12),
+        fg=TEXT_COLOR,
+        bg=BACKGROUND_COLOR
+    )
+    tentativas_label.pack(side='left', padx=20)
 
 def ver_dados_guardados():
     if not dados_guardados:
@@ -225,7 +280,7 @@ def ver_dados_guardados():
     # Criar janela para mostrar dados guardados
     janela_dados = tk.Toplevel(root)
     janela_dados.title("Dados Guardados")
-    janela_dados.geometry("500x600")
+    center_window(janela_dados, 500, 600)
     janela_dados.configure(bg=BACKGROUND_COLOR)
     
     # Título
@@ -267,7 +322,7 @@ def ver_pontuacao():
     # Criar janela para mostrar pontuação
     janela_pontuacao = tk.Toplevel(root)
     janela_pontuacao.title("Pontuação das Rodadas")
-    janela_pontuacao.geometry("400x300")
+    center_window(janela_pontuacao, 400, 400)
     janela_pontuacao.configure(bg=BACKGROUND_COLOR)
     
     # Título
@@ -279,19 +334,30 @@ def ver_pontuacao():
         fg=TEXT_COLOR
     ).pack(pady=20)
     
-    # Frame para pontuações
+    # Frame para mostrar as pontuações
     frame_pontuacao = tk.Frame(janela_pontuacao, bg=BACKGROUND_COLOR)
     frame_pontuacao.pack(pady=20)
     
     # Mostrar pontuação de cada rodada
-    for num, pontos in pontuacao_total.items():
+    total_pontos = 0
+    for rodada_num, pontos in pontuacao_total.items():
+        total_pontos += pontos
         tk.Label(
             frame_pontuacao,
-            text=f"Rodada {num}: {pontos} pontos",
+            text=f'Rodada {rodada_num}: {pontos} pontos',
             font=('Arial', 12),
             bg=BACKGROUND_COLOR,
             fg=TEXT_COLOR
         ).pack(pady=5)
+    
+    # Mostrar pontuação total
+    tk.Label(
+        janela_pontuacao,
+        text=f'\nPontuação Total: {total_pontos} pontos',
+        font=('Arial', 14, 'bold'),
+        bg=BACKGROUND_COLOR,
+        fg=ACCENT_COLOR
+    ).pack(pady=20)
 
 def atualizar_interface():
     # Limpar labels anteriores
@@ -306,79 +372,90 @@ def atualizar_interface():
     tk.Label(
         info_frame,
         text=f"Rodada: {rodada}",
-        font=('Arial', 12, 'bold'),
-        bg=BACKGROUND_COLOR,
-        fg=TEXT_COLOR
-    ).pack(side=tk.LEFT, padx=10)
+        font=('Arial', 12),
+        fg=TEXT_COLOR,
+        bg=BACKGROUND_COLOR
+    ).pack(side='left', padx=20)
     
     tk.Label(
         info_frame,
         text="|",
         font=('Arial', 12),
-        bg=BACKGROUND_COLOR,
-        fg=TEXT_COLOR
-    ).pack(side=tk.LEFT, padx=10)
+        fg=TEXT_COLOR,
+        bg=BACKGROUND_COLOR
+    ).pack(side='left', padx=20)
     
     tk.Label(
         info_frame,
         text=f"Tentativas restantes: {tentativas}",
-        font=('Arial', 12, 'bold'),
-        bg=BACKGROUND_COLOR,
-        fg=TEXT_COLOR
-    ).pack(side=tk.LEFT, padx=10)
-
-# Configurar estilo para os checkbuttons
-style = ttk.Style()
-style.configure('Custom.TCheckbutton',
-                background=BACKGROUND_COLOR,
-                foreground=TEXT_COLOR)
-
-# Frame principal
-main_frame = tk.Frame(root, bg=BACKGROUND_COLOR)
-main_frame.pack(expand=True, fill='both', pady=20)
-
-# Título do jogo
-titulo_jogo = tk.Label(
-    main_frame,
-    text='Jogo General',
-    font=('Arial', 24, 'bold'),
-    bg=BACKGROUND_COLOR,
-    fg=TEXT_COLOR
-)
-titulo_jogo.pack(pady=(0, 20))
-
-# Frame para os botões
-frame_botao = tk.Frame(main_frame, bg=BACKGROUND_COLOR)
-frame_botao.pack(pady=20)
-
-# Opções do menu como botões
-botoes = [
-    ('Jogar Dados', jogar_dados),
-    ('Ver Dados Guardados', ver_dados_guardados),
-    ('Ver Pontuação das Rodadas', ver_pontuacao),
-    ('Sair', root.destroy)
-]
-
-for texto, comando in botoes:
-    botao = tk.Button(
-        frame_botao,
-        text=texto,
-        command=comando,
-        font=('Arial', 14),
-        bg=BACKGROUND_COLOR,
+        font=('Arial', 12),
         fg=TEXT_COLOR,
-        relief='raised',
-        bd=2,
-        padx=20,
-        pady=10
+        bg=BACKGROUND_COLOR
+    ).pack(side='left', padx=20)
+
+def show_main_menu():
+    global main_frame
+    if main_frame:
+        main_frame.destroy()
+
+    main_frame = create_rounded_frame(root)
+    main_frame.pack(expand=True, fill='both', padx=40, pady=20)
+
+    # Título
+    title_frame = create_title(main_frame, 'Jogo General')
+    title_frame.pack(fill='x')
+
+    # Botões principais
+    buttons_frame = tk.Frame(main_frame, bg=BACKGROUND_COLOR)
+    buttons_frame.pack(pady=20)
+
+    jogar_button = ModernButton(buttons_frame, text='Jogar Dados', command=jogar_dados)
+    jogar_button.pack(pady=10)
+
+    ver_dados_button = ModernButton(buttons_frame, text='Ver Dados Guardados', command=ver_dados_guardados)
+    ver_dados_button.pack(pady=10)
+
+    ver_pontuacao_button = ModernButton(buttons_frame, text='Ver Pontuação das Rodadas', command=ver_pontuacao)
+    ver_pontuacao_button.pack(pady=10)
+
+    sair_button = ModernButton(buttons_frame, text='Sair', command=root.quit)
+    sair_button.pack(pady=10)
+
+    # Informações do jogo
+    info_frame = tk.Frame(main_frame, bg=BACKGROUND_COLOR)
+    info_frame.pack(pady=20)
+
+    rodada_label = tk.Label(
+        info_frame,
+        text=f'Rodada: {rodada}',
+        font=('Arial', 12),
+        fg=TEXT_COLOR,
+        bg=BACKGROUND_COLOR
     )
-    botao.pack(pady=10)
-    
-    # Adicionar efeitos hover
-    botao.bind("<Enter>", on_enter)
-    botao.bind("<Leave>", on_leave)
+    rodada_label.pack(side='left', padx=20)
+
+    tentativas_label = tk.Label(
+        info_frame,
+        text=f'Tentativas restantes: {tentativas}',
+        font=('Arial', 12),
+        fg=TEXT_COLOR,
+        bg=BACKGROUND_COLOR
+    )
+    tentativas_label.pack(side='left', padx=20)
+
+def center_window(window, width, height):
+    # Obtendo o tamanho da tela
+    screen_width = window.winfo_screenwidth()
+    screen_height = window.winfo_screenheight()
+
+    # Calculando a posição x e y para centralizar
+    pos_x = (screen_width - width) // 2
+    pos_y = (screen_height - height) // 2
+
+    # Definindo a geometria da janela centralizada
+    window.geometry(f'{width}x{height}+{pos_x}+{pos_y}')
 
 # Inicializar interface
-atualizar_interface()
+show_main_menu()
 
 root.mainloop()
