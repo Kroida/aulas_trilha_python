@@ -5,7 +5,7 @@ import tkinter as tk
 root = tk.Tk()
 root.title('Interface interativa')  # Define o título da janela
 root.geometry('800x600')  # Define o tamanho da janela (largura x altura)
-root.configure(bg='#f7f7f7')  # Configura a cor de fundo da janela
+root.configure(bg='')  # Configura a cor de fundo da janela
 
 # Função chamada ao clicar no botão
 def botao_clique():
@@ -22,12 +22,19 @@ def atualizar_label(event):
     # Atualiza o texto da label com o caractere da tecla pressionada
     label_resultado.config(text=f"Tecla pressionada: {event.char}")
 
+# Carregando a imagem
+bg_image = tk.PhotoImage(file="C:\\Users\\292200971\\Downloads\\aulas_trilha_python\\aula30\\background.png")
+
+# Criando um Label com a imagem de fundo
+background_label = tk.Label(root, image=bg_image)
+background_label.place(relwidth=1, relheight=1)  # Faz a imagem ocupar toda a janela
+
 # Cria uma label de instrução na janela
 label = tk.Label(
     root,
     text='Pressione qualquer tecla ou clique no botão',  # Texto exibido na label
     font=('Arial', 20),  # Fonte e tamanho do texto
-    bg='#f7f7f7',  # Cor de fundo da label (igual à cor da janela)
+    bg='',  # Cor de fundo da label (igual à cor da janela)
     fg='#272727'  # Cor do texto
 )
 label.pack(pady=20)  # Adiciona a label à janela com espaçamento vertical (padding)
@@ -37,7 +44,7 @@ label_resultado = tk.Label(
     root,
     text="",  # Inicialmente sem texto
     font=("Arial", 14),  # Fonte e tamanho do texto
-    bg="#f7f7f7",  # Cor de fundo (igual à janela)
+    bg='',  # Cor de fundo (igual à janela)
     fg='#272727'  # Cor do texto
 )
 label_resultado.pack(pady=10)  # Adiciona a label à janela com espaçamento vertical (padding)
