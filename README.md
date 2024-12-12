@@ -7,3 +7,6 @@
 
 *Aula 29:
 	Desafio Jogo de General.
+
+*Aula 30:
+	Interatividade com Tkinter;
