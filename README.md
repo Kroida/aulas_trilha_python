@@ -9,4 +9,7 @@
 	Desafio Jogo de General.
 
 *Aula 30:
-	Interatividade com Tkinter;
+	Interatividade e eventos com Tkinter;
+
+*Aula 31:
+	Tkinter - Listbox e Scrollbar;

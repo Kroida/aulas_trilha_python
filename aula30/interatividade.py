@@ -23,14 +23,7 @@ def ao_mover_mouse(event):
 
 
 # Criando um botão com interatividade
-botao = tk.Button(
-    root,
-    text="Clique Aqui!",
-    font=("Arial", 14),
-    bg="green",
-    fg="white",
-    command=ao_clicar
-)
+botao = tk.Button(root, text="Clique Aqui!", font=("Arial", 14), bg="green", fg="white", command=ao_clicar)
 botao.pack(pady=20)
 
 # Associando o evento de teclado à janela principal
