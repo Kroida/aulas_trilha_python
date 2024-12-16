@@ -13,3 +13,6 @@
 
 *Aula 31:
 	Tkinter - Listbox e Scrollbar;
+
+*Aula 32:
+	Continuação da aula 31;
