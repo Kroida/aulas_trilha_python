@@ -1,0 +1,10 @@
+*O método pack() organiza os widgets sequencialmente (de cima para baixo ou da esquerda para a direita). Podemos ajustar o alinhamento usando as opções side, fill e expand.
+- `pack()` posiciona os widgets em sequência.
+- Usamos `side=tk.TOP`, `side=tk.LEFT`, etc., para definir o alinhamento.
+- `fill` ajusta o preenchimento (horizontal ou vertical).
+- `padx` e `pady` adicionam espaçamento entre widgets.
+
+*O método grid() organiza widgets em uma grade (linhas e colunas). Cada widget é posicionado em uma célula específica definida pelos parâmetros row e column.
+- `grid(row, column)`: Define a posição do widget na grade.
+- `padx` e `pady`: Adicionam espaçamento interno.
+- `columnspan`: Permite que um widget ocupe múltiplas colunas.

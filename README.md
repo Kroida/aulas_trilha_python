@@ -16,3 +16,6 @@
 
 *Aula 32:
 	Continuação da aula 31;
+
+*Aula 33:
+	Gerenciadores de Layout no Tkinter;
