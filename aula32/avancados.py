@@ -132,5 +132,29 @@ botao_opcoes.pack(pady=10)
 label_opcoes = tk.Label(frame_lc, text="", font=("Arial", 20), bg="lightgray")
 label_opcoes.pack(pady=10)
 
+# ------------------------------------------------------------------------------------------------------- Combobox ---------------------------------------------------------------------------------------------------------------------
+
+# Função para exibir a seleção da Combobox
+def exibir_combobox():
+    selecao = combobox.get()  # Obtém o valor selecionado
+    label_combobox.config(text=f"Você escolheu: {selecao}")
+
+# Label de instrução
+label_combobox_instrucao = tk.Label(root, text="Escolha uma IDE da lista:", font=("Arial", 12), bg="lightgray")
+label_combobox_instrucao.pack(pady=10)
+
+# Combobox
+combobox = ttk.Combobox(root, values=["PyCharm", "VSCode", "Eclipse", "IntelliJ"])
+combobox.pack(pady=5)
+combobox.set("PyCharm")  # Valor inicial
+
+# Label para exibir a escolha
+label_combobox = tk.Label(root, text="", font=("Arial", 12), bg="lightgray")
+label_combobox.pack(pady=10)
+
+# Botão para exibir a seleção
+botao_combobox = tk.Button(root, text="Exibir Escolha", font=("Arial", 12), bg="purple", fg="white", command=exibir_combobox)
+botao_combobox.pack(pady=10)
+
 # Iniciando o loop de eventos do Tkinter para executar o aplicativo
 root.mainloop()

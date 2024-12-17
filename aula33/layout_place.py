@@ -12,7 +12,7 @@ def criar_interface_place():
     
     tk.Label(janela_place, text="Posição Relativa", bg="cyan", fg="black").place(x=50, y=100, width=200, height=30)
 
-    tk.Button(janela_place, text="Fechar", command=janela_place.destroy).place(x=100, y=200)
+    tk.Button(janela_place, text="Fechar", command=janela_place.destroy).place(relx=0.43, y=200)
     
     return janela_place
 
