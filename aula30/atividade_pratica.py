@@ -5,7 +5,7 @@ import tkinter as tk
 root = tk.Tk()
 root.title('Interface interativa')  # Define o título da janela
 root.geometry('800x600')  # Define o tamanho da janela (largura x altura)
-root.configure(bg='')  # Configura a cor de fundo da janela
+root.configure(bg='lightblue')  # Configura a cor de fundo da janela
 
 # Função chamada ao clicar no botão
 def botao_clique():
@@ -34,7 +34,7 @@ label = tk.Label(
     root,
     text='Pressione qualquer tecla ou clique no botão',  # Texto exibido na label
     font=('Arial', 20),  # Fonte e tamanho do texto
-    bg='',  # Cor de fundo da label (igual à cor da janela)
+    bg='lightblue',  # Cor de fundo da label (igual à cor da janela)
     fg='#272727'  # Cor do texto
 )
 label.pack(pady=20)  # Adiciona a label à janela com espaçamento vertical (padding)
@@ -44,7 +44,7 @@ label_resultado = tk.Label(
     root,
     text="",  # Inicialmente sem texto
     font=("Arial", 14),  # Fonte e tamanho do texto
-    bg='',  # Cor de fundo (igual à janela)
+    bg='lightblue',  # Cor de fundo (igual à janela)
     fg='#272727'  # Cor do texto
 )
 label_resultado.pack(pady=10)  # Adiciona a label à janela com espaçamento vertical (padding)
