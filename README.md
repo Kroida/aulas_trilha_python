@@ -19,3 +19,6 @@
 
 *Aula 33:
 	Gerenciadores de Layout no Tkinter;
+
+ *Aula 35:
+	Jogo de Minesweeper;
