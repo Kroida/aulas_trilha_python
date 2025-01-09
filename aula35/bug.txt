@@ -1,0 +1,1 @@
+If you don't select a folder into your code reader the code won't work because of unspecific path of "senac.ico"
