@@ -335,5 +335,5 @@ def interface():
 
 
 if __name__ == "__main__":
-    janela = interface()
-    janela.mainloop()
+    window = interface()
+    window.mainloop()
