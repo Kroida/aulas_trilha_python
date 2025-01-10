@@ -14,7 +14,7 @@ class Cell:
 
 
 class Grid:
-    # height é linha -, width é coluna |
+    # height is row -, width is column |
     def __init__(self, width, height, num_mines):
         self.width = width
         self.height = height
@@ -22,9 +22,10 @@ class Grid:
         self.board = [[Cell() for _ in range(width)] for _ in range(height)]
         self.first_click = True
 
+
     def generate_mines(self, first_x, first_y):
-        """Coloca minas aleatoriamente no tabuleiro, evitando a primeira célula clicada e seus vizinhos."""
-        # Lista de células seguras ao redor do primeiro clique
+        """Places mines randomly on the board, avoiding the first clicked cell and its neighbors."""
+        # List of safe cells around first click
         safe_cells = []
         for dx in [-1, 0, 1]:
             for dy in [-1, 0, 1]:
@@ -32,38 +33,40 @@ class Grid:
                 if 0 <= nx < self.width and 0 <= ny < self.height:
                     safe_cells.append((nx, ny))
 
-        # Lista todas as posições possíveis exceto as células seguras
+        # Lists all possible positions except safe cells
         all_positions = [(x, y) for x in range(self.width) for y in range(self.height) 
                         if (x, y) not in safe_cells]
         
-        # Escolhe posições aleatórias para as minas
+        # Choose random positions for mines
         mine_positions = random.sample(all_positions, min(self.num_mines, len(all_positions)))
         
         for x, y in mine_positions:
             self.board[y][x].has_mine = True
 
-        # Atualizar números ao redor das minas
+        # Update numbers around mines
         for y in range(self.height):
             for x in range(self.width):
                 if self.board[y][x].has_mine:
                     continue
                 self.board[y][x].adjacent_mines = self.count_adjacent_mines(x, y)
 
+
     def count_adjacent_mines(self, x, y):
-        """Conta o número de minas ao redor de uma célula."""
+        """Counts the number of mines around a cell."""
         count = 0
         for dx in [-1, 0, 1]:
             for dy in [-1, 0, 1]:
-                if dx == 0 and dy == 0:  # Ignorar a célula atual
+                if dx == 0 and dy == 0:  # Ignore current cell
                     continue
                 nx, ny = x + dx, y + dy
                 if 0 <= nx < self.width and 0 <= ny < self.height and self.board[ny][nx].has_mine:
                     count += 1
         return count
 
+
     def reveal_cell(self, row, col):
         """
-        Revela o conteúdo da célula e aciona a recursão para áreas livres.
+        Reveals the cell contents and triggers recursion to free areas.
         """
         cell = self.board[row][col]
         if cell.state != "hidden":
@@ -86,9 +89,10 @@ class Grid:
                     self.reveal_cell(nr, nc)
         return "continue"
 
+
     def check_victory(self):
         """
-        Verifica se todas as células seguras foram reveladas.
+        Checks if all safe cells have been revealed.
         """
         for row in self.board:
             for cell in row:
@@ -96,9 +100,10 @@ class Grid:
                     return False
         return True
 
+
     def mark_cell(self, row, col):
         """
-        Marca ou desmarca uma célula como suspeita de conter uma mina.
+        Marks or unmarks a cell as suspected of containing a mine.
         """
         cell = self.board[row][col]
         if cell.state == "hidden":
@@ -113,30 +118,30 @@ def interface():
     root.iconbitmap('senac.ico')
     root.configure(bg='#101010')
     
-    # Definindo o tamanho da janela
+    # Setting the window size
     largura = 500
     altura = 670
 
-    # Obtendo o tamanho da tela
+    # Getting the screen size
     largura_tela = root.winfo_screenwidth()
     altura_tela = root.winfo_screenheight()
 
-    # Calculando a posição x e y para centralizar
+    # Calculating x and y position to center
     pos_x = (largura_tela - largura) // 2
     pos_y = (altura_tela - altura) // 3
 
-    # Definindo a geometria da janela centralizada
+    # Defining centered window geometry
     root.geometry(f'{largura}x{altura}+{pos_x}+{pos_y}')
     
-    # Frame principal com padding
+    # Main frame with padding
     main_frame = tk.Frame(root, bg='#101010', padx=25, pady=25)
     main_frame.pack(expand=True, fill='both')
     
-    # Frame para informações do jogo (timer e contador de minas)
+    # Frame for game information (timer and mine counter)
     info_frame = tk.Frame(main_frame, bg='#101010')
     info_frame.pack(fill='x', pady=(0, 20))
     
-    # Estilo para os labels de informação
+    # Style for information labels
     info_style = {
         'font': ('Helvetica', 24, 'bold'),
         'bg': '#101010',
@@ -145,22 +150,23 @@ def interface():
         'pady': 10
     }
     
-    # Frame para o contador de minas (esquerda)
+    # Frame for the mine counter (left)
     mines_frame = tk.Frame(info_frame, bg='#151515', relief='ridge', bd=2)
     mines_frame.pack(side='left')
     mines_count = tk.Label(mines_frame, text="💣 10", **info_style)
     mines_count.pack()
     
-    # Frame para o timer (direita)
+    # Frame for timer (right)
     timer_frame = tk.Frame(info_frame, bg='#151515', relief='ridge', bd=2)
     timer_frame.pack(side='right')
     timer_label = tk.Label(timer_frame, text="⏱️ 000", **info_style)
     timer_label.pack()
     
-    # Variáveis para controle
+    # Variables for control
     time_count = 0
     remaining_mines = 10
     game_active = True
+    
     
     def update_timer():
         nonlocal time_count
@@ -169,25 +175,25 @@ def interface():
             timer_label.config(text=f"⏱️ {time_count:03d}")
             root.after(1000, update_timer)
     
-    # Frame para o jogo com borda
+    # Game frame with border
     game_container = tk.Frame(main_frame, bg='#151515', relief='ridge', bd=2)
     game_container.pack(padx=10, pady=10)
     
     game_frame = tk.Frame(game_container, bg='#151515', padx=10, pady=10)
     game_frame.pack()
     
-    # Status label com estilo melhorado
+    # Status label with improved style
     status_frame = tk.Frame(main_frame, bg='#151515', relief='ridge', bd=2)
     status_frame.pack(fill='x', pady=20)
     status_label = tk.Label(status_frame, text="Game in Progress", bg='#151515', fg='#f70813', 
                            font=('Helvetica', 16, 'bold'), pady=10)
     status_label.pack()
     
-    # Criar grade do jogo
-    grid = Grid(9, 9, 10)  # Tabuleiro de 9x9 com 10 minas
+    # Create game grid
+    grid = Grid(9, 9, 10)  # 9x9 board with 10 mines
     buttons = []
     
-    # Estilo padrão para os botões
+    # Default style for buttons
     button_style = {
         'width': 3,
         'height': 1,
@@ -198,6 +204,7 @@ def interface():
         'bd': 2
     }
     
+    
     def on_left_click(x, y):
         nonlocal game_active
         cell = grid.board[y][x]
@@ -206,7 +213,7 @@ def interface():
         if cell.state == Cell.FLAGGED:
             return
         
-        # Se for o primeiro clique, gerar minas e iniciar timer
+        # If it is the first click, generate mines and start timer
         if grid.first_click:
             grid.generate_mines(x, y)
             grid.first_click = False
@@ -223,6 +230,7 @@ def interface():
                 status_label.configure(text="You Won! 🎉")
                 game_active = False
                 reveal_all()
+
 
     def on_right_click(event, x, y):
         nonlocal remaining_mines
@@ -243,9 +251,10 @@ def interface():
             
         mines_count.config(text=f"💣 {remaining_mines:02d}")
 
+
     def reveal_cell(x, y, depth=0):
         cell = grid.board[y][x]
-        if cell.state != Cell.HIDDEN or depth > 3:  # Limita a profundidade da recursão
+        if cell.state != Cell.HIDDEN or depth > 3:  # Limits the depth of recursion
             return
 
         button = buttons[y][x]
@@ -268,6 +277,7 @@ def interface():
                            bg='#303030',
                            fg=colors[cell.adjacent_mines - 1])
 
+
     def reveal_all():
         for y in range(grid.height):
             for x in range(grid.width):
@@ -287,7 +297,7 @@ def interface():
                                    relief='sunken',
                                    bg='#303030')
 
-    # Criar botões do grid
+    # Create grid buttons
     for y in range(grid.height):
         row = []
         for x in range(grid.width):
@@ -298,11 +308,12 @@ def interface():
             row.append(button)
         buttons.append(row)
 
-    # Frame para o botão de novo jogo
+    # Frame for new game button
     control_frame = tk.Frame(main_frame, bg='#151515', relief='ridge', bd=2)
     control_frame.pack(fill='x', pady=(0, 10))
     
-    # Botão de novo jogo com estilo melhorado
+    
+    # New game button with improved style
     def new_game():
         root.destroy()
         new_window = interface()
