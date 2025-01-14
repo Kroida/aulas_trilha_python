@@ -1,5 +1,6 @@
 import random
 
+
 class Cartela:
     def __init__(self, tamanho, intervalo_min, intervalo_max):
         self.tamanho = tamanho
@@ -45,3 +46,45 @@ class Cartela:
         return True
 
       return False
+
+
+class Sorteador:
+    def __init__(self, intervalo_min, intervalo_max):
+        self.intervalo_min = intervalo_min
+        self.intervalo_max = intervalo_max
+        self.numeros = list(range(intervalo_min, intervalo_max + 1))
+        random.shuffle(self.numeros)
+        self.sorteados = set()
+
+    def sortear(self):
+        if self.numeros:
+            numero = self.numeros.pop(0)
+            self.sorteados.add(numero)
+            return numero
+        return None
+      
+
+if __name__ == "__main__":
+    # Teste da Cartela
+    cartela = Cartela(5, 1, 75)
+    print("Cartela Gerada:")
+    for linha in cartela.matriz:
+        print(linha)
+    
+    print("\nMarcando o número 20 na cartela:")
+    cartela.marcar_numero(20)
+    
+    print("\nCartela Marcada:")
+    for i in range(cartela.tamanho):
+        print(f"{cartela.matriz[i]} - {cartela.marcados[i]}")
+    
+    # Teste do Sorteador
+    sorteador = Sorteador(1, 75)
+    print("\nNúmeros Sorteados:")
+    for _ in range(5):
+        numero_sorteado = sorteador.sortear()
+        if numero_sorteado:
+          print(f"Número sorteado: {numero_sorteado}")
+    
+    print("\nConjunto de sorteados:")
+    print(sorteador.sorteados)
