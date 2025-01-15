@@ -1,4 +1,4 @@
-# Curso de Tkinter e Django
+# Curso de Python
 
 Este repositório contém as aulas e desafios relacionados à biblioteca Tkinter e à introdução ao Django.
 
