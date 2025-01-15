@@ -1,24 +1,37 @@
-*Aula 27:
-	Introdução à biblioteca Tkinter.
+# Curso de Tkinter e Django
 
-*Aula 28:
-	Aprendendo um pouco mais sobre Tkinter;
-	Desafio Amigo Secreto.
+Este repositório contém as aulas e desafios relacionados à biblioteca Tkinter e à introdução ao Django.
 
-*Aula 29:
-	Desafio Jogo de General.
+## Aulas
 
-*Aula 30:
-	Interatividade e eventos com Tkinter;
+### Aula 27: Introdução à biblioteca Tkinter
+- Apresentação da biblioteca Tkinter para criar interfaces gráficas no Python.
 
-*Aula 31:
-	Tkinter - Listbox e Scrollbar;
+### Aula 28: Explorando Tkinter
+- Aprendizado avançado sobre Tkinter.
+- **Desafio**: Amigo Secreto.
 
-*Aula 32:
-	Continuação da aula 31;
+### Aula 29: Desafio - Jogo de General
+- Desenvolvimento de um jogo simples utilizando Tkinter.
 
-*Aula 33:
-	Gerenciadores de Layout no Tkinter;
+### Aula 30: Interatividade e Eventos com Tkinter
+- Como trabalhar com eventos e interatividade nas interfaces Tkinter.
 
- *Aula 35:
-	Jogo de Minesweeper;
+### Aula 31: Tkinter - Listbox e Scrollbar
+- Introdução aos widgets Listbox e Scrollbar do Tkinter.
+
+### Aula 32: Continuação da Aula 31
+- Continuação e aprofundamento nos conceitos de Listbox e Scrollbar.
+
+### Aula 33: Gerenciadores de Layout no Tkinter
+- Aprendizado sobre diferentes gerenciadores de layout no Tkinter (pack, grid, place).
+
+### Aula 35: Jogo de Minesweeper
+- Desenvolvimento do clássico jogo Minesweeper utilizando Tkinter.
+
+### Aula 36: Jogo de Bingo
+- Criação de um jogo simples de Bingo com Tkinter.
+
+### Aula 37: Introdução à biblioteca Django
+- Primeiros passos com o Django para desenvolvimento web.
+- **Nota**: A segunda pasta chamada "auladedjango" deveria ser renomeada para "my_project".
