@@ -1,0 +1,65 @@
+{% load static %}
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruteira - Cadastrar Fruta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-gray-900 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <span class="text-xl font-bold">Fruteira</span>
+            <ul class="flex space-x-4">
+                <li><a href="{% url 'home' %}" class="hover:text-gray-400">Home</a></li>
+                <li><a href="{% url 'lista_frutas' %}" class="hover:text-gray-400">Lista de Frutas</a></li>
+                <li><a href="{% url 'cadastrar_fruta' %}" class="hover:text-gray-400">Cadastrar Fruta</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mx-auto mt-8">
+        <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+            <h1 class="text-2xl font-semibold mb-6">Cadastrar Nova Fruta</h1>
+            
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="mb-4 p-4 rounded {% if message.tags == 'success' %}bg-green-100 text-green-700{% else %}bg-red-100 text-red-700{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            
+            <form method="POST" class="space-y-4">
+                {% csrf_token %}
+                <div>
+                    <label for="nome" class="block text-sm font-medium text-gray-700">Nome da Fruta</label>
+                    <input type="text" name="nome" id="nome" required
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="preco" class="block text-sm font-medium text-gray-700">Preço (R$)</label>
+                    <input type="number" name="preco" id="preco" step="0.01" required
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="quantidade" class="block text-sm font-medium text-gray-700">Quantidade em Estoque</label>
+                    <input type="number" name="quantidade" id="quantidade" required
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                </div>
+                <div class="flex justify-end space-x-4 mt-6">
+                    <a href="{% url 'lista_frutas' %}" 
+                        class="bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-600">
+                        Cancelar
+                    </a>
+                    <button type="submit" 
+                        class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">
+                        Cadastrar Fruta
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

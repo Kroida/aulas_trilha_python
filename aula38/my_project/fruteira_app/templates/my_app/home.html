@@ -1,0 +1,47 @@
+{% load static %}
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruteira - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-gray-900 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <span class="text-xl font-bold">Fruteira</span>
+            <ul class="flex space-x-4">
+                <li><a href="{% url 'home' %}" class="hover:text-gray-400">Home</a></li>
+                <li><a href="{% url 'lista_frutas' %}" class="hover:text-gray-400">Lista de Frutas</a></li>
+                <li><a href="{% url 'cadastrar_fruta' %}" class="hover:text-gray-400">Cadastrar Fruta</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mx-auto mt-8">
+        <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h1 class="text-4xl font-bold text-center mb-6">Bem-vindo à Fruteira</h1>
+            <div class="text-center mb-8">
+                <p class="text-xl text-gray-600">Seu sistema de gerenciamento de frutas</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <h2 class="text-2xl font-semibold mb-4">Lista de Frutas</h2>
+                    <p class="text-gray-600 mb-4">Visualize todas as frutas disponíveis em nosso estoque.</p>
+                    <a href="{% url 'lista_frutas' %}" class="inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">
+                        Ver Lista
+                    </a>
+                </div>
+                <div class="bg-green-50 p-6 rounded-lg">
+                    <h2 class="text-2xl font-semibold mb-4">Cadastrar Nova Fruta</h2>
+                    <p class="text-gray-600 mb-4">Adicione novas frutas ao sistema de forma rápida e fácil.</p>
+                    <a href="{% url 'cadastrar_fruta' %}" class="inline-block bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">
+                        Cadastrar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

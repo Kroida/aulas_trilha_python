@@ -1,0 +1,72 @@
+{% load static %}
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruteira - Lista de Frutas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-gray-900 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <span class="text-xl font-bold">Fruteira</span>
+            <ul class="flex space-x-4">
+                <li><a href="{% url 'home' %}" class="hover:text-gray-400">Home</a></li>
+                <li><a href="{% url 'lista_frutas' %}" class="hover:text-gray-400">Lista de Frutas</a></li>
+                <li><a href="{% url 'cadastrar_fruta' %}" class="hover:text-gray-400">Cadastrar Fruta</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mx-auto mt-8">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="mb-4 p-4 rounded {% if message.tags == 'success' %}bg-green-100 text-green-700{% else %}bg-red-100 text-red-700{% endif %}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        
+        <h1 class="text-2xl font-semibold mb-4">Lista de Frutas</h1>
+        <a href="{% url 'cadastrar_fruta' %}" class="inline-block bg-blue-600 text-white py-2 px-4 rounded mb-4 hover:bg-blue-700">
+            Nova Fruta
+        </a>
+        <table class="min-w-full bg-white border">
+            <thead>
+                <tr>
+                    <th class="px-4 py-2 border">Nome</th>
+                    <th class="px-4 py-2 border">Preço</th>
+                    <th class="px-4 py-2 border">Quantidade</th>
+                    <th class="px-4 py-2 border">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if frutas %}
+                    {% for fruta in frutas %}
+                    <tr class="{% cycle 'bg-white' 'bg-gray-50' %}">
+                        <td class="px-4 py-2 border">{{ fruta.nome }}</td>
+                        <td class="px-4 py-2 border">R$ {{ fruta.preco }}</td>
+                        <td class="px-4 py-2 border">{{ fruta.quantidade }}</td>
+                        <td class="px-4 py-2 border text-center">
+                            <a href="#" class="text-blue-600 hover:text-blue-800 mr-2">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a href="#" class="text-red-600 hover:text-red-800">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr class="bg-gray-50">
+                        <td colspan="4" class="px-4 py-2 border text-center text-gray-500">
+                            Nenhuma fruta cadastrada.
+                        </td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
