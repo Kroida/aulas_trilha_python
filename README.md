@@ -35,3 +35,8 @@ Este repositório contém as aulas e desafios relacionados à biblioteca Tkinter
 ### Aula 37: Introdução à biblioteca Django
 - Primeiros passos com o Django para desenvolvimento web.
 - **Nota**: A segunda pasta chamada "auladedjango" deveria ser renomeada para "my_project".
+
+
+### Aula 37: Avançando em Django
+- Criando interfaces interativas.
+- Mexendo em banco de dados com Windsurf.
