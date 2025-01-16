@@ -37,6 +37,6 @@ Este repositório contém as aulas e desafios relacionados à biblioteca Tkinter
 - **Nota**: A segunda pasta chamada "auladedjango" deveria ser renomeada para "my_project".
 
 
-### Aula 37: Avançando em Django
+### Aula 38: Avançando em Django
 - Criando interfaces interativas.
 - Mexendo em banco de dados com Windsurf.
