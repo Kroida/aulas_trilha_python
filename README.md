@@ -40,3 +40,7 @@ Este repositório contém as aulas e desafios relacionados à biblioteca Tkinter
 ### Aula 38: Avançando em Django
 - Criando interfaces interativas.
 - Mexendo em banco de dados com Windsurf.
+
+### Aula 39: Introdução à biblioteca Pandas
+- Interagindo e extraindo informações de um arquivo Excel.
+- Enviando o arquivo Excel por email.
