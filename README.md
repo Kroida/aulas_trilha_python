@@ -32,7 +32,7 @@ Este repositório contém as aulas e desafios relacionados à biblioteca Tkinter
 ### Aula 36: Jogo de Bingo
 - Criação de um jogo simples de Bingo com Tkinter.
 
-### SEMPRE CRIAR A .VENV ANTES DE INSTALAR UMA BIBLIOTECA COM DJANGO.
+### SEMPRE CRIAR A PASTA .VENV ANTES DE INSTALAR UMA BIBLIOTECA COM DJANGO.
 
 ### Aula 37: Introdução à biblioteca Django
 - Primeiros passos com o Django para desenvolvimento web.
