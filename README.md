@@ -32,15 +32,17 @@ Este repositório contém as aulas e desafios relacionados à biblioteca Tkinter
 ### Aula 36: Jogo de Bingo
 - Criação de um jogo simples de Bingo com Tkinter.
 
+### SEMPRE CRIAR A .VENV ANTES DE INSTALAR UMA BIBLIOTECA COM DJANGO.
+
 ### Aula 37: Introdução à biblioteca Django
 - Primeiros passos com o Django para desenvolvimento web.
 - **Nota**: A segunda pasta chamada "auladedjango" deveria ser renomeada para "my_project".
-
 
 ### Aula 38: Avançando em Django
 - Criando interfaces interativas.
 - Mexendo em banco de dados com Windsurf.
 
 ### Aula 39: Introdução à biblioteca Pandas
-- Interagindo e extraindo informações de um arquivo Excel.
-- Enviando o arquivo Excel por email.
+- Interagindo e extraindo informações de um arquivo em Excel.
+- Formatando o código.
+- Enviando as informações extraídas por email.

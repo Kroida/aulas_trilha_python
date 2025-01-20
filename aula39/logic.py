@@ -18,6 +18,7 @@ quantidade = tabela_de_vendas[['ID Loja', 'Quantidade']].groupby('ID Loja').sum(
 
 # Tickect médio por produto em cada loja
 ticket_medio = (faturamento['Valor Final'] / quantidade['Quantidade']).to_frame() # Dividiu coluna por coluna e transformou em DataFrame
+ticket_medio = ticket_medio.rename(columns={0: 'Ticket Médio'}) # Renomeou a coluna 0 para Ticket Médio
 # print('-' * 50, ticket_medio, sep='\n')
 
 # Enviar um email com o relatório anexado
@@ -27,15 +28,22 @@ mail.To = 'luisGNS8022@gmail.com'
 mail.Subject = 'Relatório de Vendas por Loja'
 mail.HTMLBody = f'''
 <p>Prezados,</p>
+
 <p>Segue o Relatório de Vendas por cada Loja.</p>
+
 <p>Faturamento:</p>
 {faturamento.to_html(formatters={'Valor Final': 'R${:,.2f}'.format})}
+
 <p>Quantidade Vendida:</p>
 {quantidade.to_html()}
+
 <p>Ticket Médio dos Produtos em cada Loja:</p>
 {ticket_medio.to_html(formatters={'Valor Final': 'R${:,.2f}'.format})}
+
 <p>Qualquer dúvida estou à disposição.</p>
+
 <p>Att.,</p>
+
 <p>Luis</p>
 '''
 

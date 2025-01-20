@@ -1,9 +1,9 @@
 ### Dentro da pasta
 - pip install pandas
 - pip install openpyxl
+- pip install pywin32
 
 ### Códigos pré-prontos para enviar o email via outlook
-- pip install pywin32
 - import win32.com.client as win32
 
 - outlook = win32.Dispatch('outlook.application')
