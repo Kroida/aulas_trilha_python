@@ -46,3 +46,7 @@ Este repositório contém as aulas e desafios relacionados à biblioteca Tkinter
 - Interagindo e extraindo informações de um arquivo em Excel.
 - Formatando o código.
 - Enviando as informações extraídas por email.
+
+### Aula 40: Criando um site com Django
+- Técnicas de banco de dados.
+- Resolução de problemas.

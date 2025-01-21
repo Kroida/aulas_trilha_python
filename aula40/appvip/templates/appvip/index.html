@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastro de Novo Sócio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="bg-gray-200 min-h-screen flex flex-col">
+    <header class="header">
+        <div class="header-content">
+            <a href="/" class="header-title">Clube Privado</a>
+            <nav class="header-nav">
+                <a href="{% url 'index' %}" class="nav-link">Cadastrar Sócio</a>
+                <a href="{% url 'lista_socios' %}" class="nav-link">Lista de Sócios</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="flex-grow flex justify-center items-center p-6">
+        <div class="w-3/5 bg-white shadow-md rounded-lg overflow-hidden">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="{% if message.tags == 'success' %}bg-green-100 text-green-700{% else %}bg-red-100 text-red-700{% endif %} px-4 py-3 mb-4">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            
+            <div class="bg-blue-600 text-white text-lg px-4 py-2 font-semibold">
+                Cadastro de Novo Sócio
+            </div>
+            <form method="POST" class="p-6 space-y-4">
+                {% csrf_token %}
+                <div class="flex space-x-4">
+                    <div class="w-1/2">
+                        <label class="block">Nome Completo</label>
+                        <input type="text" name="nome_completo" class="w-full mt-1 p-2 border rounded" required>
+                    </div>
+                    <div class="w-1/2">
+                        <label class="block">CPF</label>
+                        <input type="text" name="cpf" class="w-full mt-1 p-2 border rounded" required>
+                    </div>
+                </div>
+                <div class="flex space-x-4">
+                    <div class="w-1/2">
+                        <label class="block">E-mail</label>
+                        <input type="email" name="email" class="w-full mt-1 p-2 border rounded" required>
+                    </div>
+                    <div class="w-1/2">
+                        <label class="block">Telefone</label>
+                        <input type="tel" name="telefone" class="w-full mt-1 p-2 border rounded" required>
+                    </div>
+                </div>
+                <div class="flex space-x-4">
+                    <div class="w-1/2">
+                        <label class="block">Data de Nascimento</label>
+                        <input type="date" name="data_nascimento" class="w-full mt-1 p-2 border rounded" required>
+                    </div>
+                    <div class="w-1/2">
+                        <label class="block">Tipo de Sócio</label>
+                        <select name="tipo_socio" class="w-full mt-1 p-2 border rounded" required>
+                            <option value="titular">Titular</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block">Mensagem</label>
+                    <textarea name="mensagem" class="w-full mt-1 p-2 border rounded h-20" required></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-2 rounded hover:bg-blue-700">
+                        Cadastrar Sócio
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
