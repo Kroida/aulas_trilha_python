@@ -20,40 +20,234 @@
     
     <main class="flex-grow flex justify-center items-start p-6">
         <div class="w-4/5 bg-white shadow-md rounded-lg overflow-hidden">
-            <div class="bg-blue-600 text-white text-lg px-4 py-2 font-semibold">
-                Lista de Sócios
+            <div class="bg-blue-600 text-white text-lg px-4 py-2 font-semibold flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <span>Lista de Sócios</span>
+                    <button id="deleteStartBtn" class="ml-2 text-white hover:text-gray-200 focus:outline-none">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+                <div class="flex space-x-2">
+                    <button id="cancelBtn" class="bg-gray-400 hover:bg-gray-500 text-white px-4 py-1 rounded hidden">
+                        Cancelar
+                    </button>
+                    <button id="deleteBtn" class="bg-red-500 hover:bg-red-600 text-white px-4 py-1 rounded hidden">
+                        Deletar Selecionados
+                    </button>
+                </div>
             </div>
             <div class="p-6">
-                <table class="min-w-full">
-                    <thead>
-                        <tr class="bg-gray-100">
-                            <th class="text-left py-2 px-3">Nome</th>
-                            <th class="text-left py-2 px-3">Email</th>
-                            <th class="text-left py-2 px-3">Telefone</th>
-                            <th class="text-left py-2 px-3">Tipo</th>
-                            <th class="text-left py-2 px-3">Data de Cadastro</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for socio in socios %}
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="py-2 px-3">{{ socio.nome_completo }}</td>
-                            <td class="py-2 px-3">{{ socio.email }}</td>
-                            <td class="py-2 px-3">{{ socio.telefone }}</td>
-                            <td class="py-2 px-3">{{ socio.tipo_socio }}</td>
-                            <td class="py-2 px-3">{{ socio.data_cadastro|date:"d/m/Y H:i" }}</td>
-                        </tr>
-                        {% empty %}
-                        <tr>
-                            <td colspan="5" class="py-4 text-center text-gray-500">
-                                Nenhum sócio cadastrado ainda.
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+                <div id="noSociosMessage" class="hidden mb-4 p-4 bg-yellow-100 text-yellow-700 rounded-lg">
+                    Nenhum sócio cadastrado/selecionado.
+                </div>
+                <form id="deleteForm" method="POST" action="{% url 'delete_socios' %}">
+                    {% csrf_token %}
+                    <table class="min-w-full">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="text-left py-2 px-3 w-10 checkbox-column hidden">
+                                    <input type="checkbox" id="selectAll" class="rounded">
+                                </th>
+                                <th class="text-left py-2 px-3 w-10">Nome</th>
+                                <th class="text-left py-2 px-3 w-10">Email</th>
+                                <th class="text-center py-2 px-3 w-10">Descrição</th>
+                                <th class="text-left py-2 px-3 w-10">Telefone</th>
+                                <th class="text-left py-2 px-3 w-10">Tipo</th>
+                                <th class="text-left py-2 px-3 w-10">Data de Cadastro</th>
+                                <th class="text-left py-2 px-3 w-10">Idade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for socio in socios %}
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-2 px-3 checkbox-column hidden">
+                                    <input type="checkbox" name="socios[]" value="{{ socio.id }}" class="socio-checkbox rounded">
+                                </td>
+                                <td class="py-2 px-3 w-10">{{ socio.nome_completo }}</td>
+                                <td class="py-2 px-3 w-10">{{ socio.email }}</td>
+                                <td class="py-2 px-3 w-10 text-center">
+                                    <button type="button" onclick="showMessage(event, '{{ socio.nome_completo }}', '{{ socio.descricao|escapejs }}')" 
+                                            class="text-blue-600 hover:text-blue-800 focus:outline-none">
+                                        <i class="fas fa-comment-alt"></i>
+                                    </button>
+                                </td>
+                                <td class="py-2 px-3 w-10">{{ socio.telefone }}</td>
+                                <td class="py-2 px-3 w-10">{{ socio.tipo_socio }}</td>
+                                <td class="py-2 px-3 w-10">{{ socio.data_cadastro|date:"d/m/Y H:i" }}</td>
+                                <td class="py-2 px-3 w-10">{{ socio.idade }} anos</td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="7" class="py-4 text-center text-gray-500">
+                                    Nenhum sócio cadastrado ainda.
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </form>
             </div>
         </div>
     </main>
+
+    <!-- Modal de Confirmação -->
+    <div id="confirmModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-lg font-bold mb-4">Confirmar Exclusão</h3>
+            <p class="mb-4">Tem certeza que deseja excluir os sócios selecionados?</p>
+            <div class="flex justify-end space-x-3">
+                <button id="modalCancelBtn" class="px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded">Cancelar</button>
+                <button id="confirmBtn" class="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded">Apagar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Mensagem -->
+    <div id="messageModal" class="fixed inset-0 bg-black bg-opacity-50 hidden">
+        <div class="fixed inset-0 flex items-center justify-center">
+            <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full mx-4">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 id="messageTitle" class="text-lg font-bold"></h3>
+                    <button type="button" onclick="hideMessage()" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <p id="messageContent" class="text-gray-700 whitespace-pre-wrap"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const deleteStartBtn = document.getElementById('deleteStartBtn');
+            const selectAll = document.getElementById('selectAll');
+            const socioCheckboxes = document.querySelectorAll('.socio-checkbox');
+            const deleteBtn = document.getElementById('deleteBtn');
+            const cancelBtn = document.getElementById('cancelBtn');
+            const confirmModal = document.getElementById('confirmModal');
+            const modalCancelBtn = document.getElementById('modalCancelBtn');
+            const confirmBtn = document.getElementById('confirmBtn');
+            const deleteForm = document.getElementById('deleteForm');
+            const checkboxColumns = document.querySelectorAll('.checkbox-column');
+            const noSociosMessage = document.getElementById('noSociosMessage');
+
+            // Função para mostrar/esconder elementos do modo de deleção
+            function toggleDeleteMode(show) {
+                checkboxColumns.forEach(col => {
+                    col.classList.toggle('hidden', !show);
+                });
+                deleteBtn.classList.toggle('hidden', !show);
+                cancelBtn.classList.toggle('hidden', !show);
+                
+                if (!show) {
+                    // Reset checkboxes when exiting delete mode
+                    selectAll.checked = false;
+                    socioCheckboxes.forEach(checkbox => {
+                        checkbox.checked = false;
+                    });
+                    updateDeleteButton();
+                    noSociosMessage.classList.add('hidden');
+                } else {
+                    // Verificar se há sócios cadastrados ao entrar no modo de deleção
+                    if (socioCheckboxes.length === 0) {
+                        noSociosMessage.classList.remove('hidden');
+                    }
+                }
+            }
+
+            // Função para atualizar visibilidade do botão deletar
+            function updateDeleteButton() {
+                const checkedBoxes = document.querySelectorAll('.socio-checkbox:checked');
+                const hasCheckedBoxes = checkedBoxes.length > 0;
+                
+                deleteBtn.classList.toggle('hidden', !hasCheckedBoxes);
+                
+                if (!cancelBtn.classList.contains('hidden')) {
+                    noSociosMessage.classList.toggle('hidden', hasCheckedBoxes);
+                }
+            }
+
+            // Delete start button
+            deleteStartBtn.addEventListener('click', function() {
+                toggleDeleteMode(true);
+            });
+
+            // Cancel button
+            cancelBtn.addEventListener('click', function() {
+                toggleDeleteMode(false);
+            });
+
+            // Select All checkbox
+            selectAll.addEventListener('change', function() {
+                socioCheckboxes.forEach(checkbox => {
+                    checkbox.checked = this.checked;
+                });
+                updateDeleteButton();
+            });
+
+            // Individual checkboxes
+            socioCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    updateDeleteButton();
+                    selectAll.checked = [...socioCheckboxes].every(cb => cb.checked);
+                });
+            });
+
+            // Delete button
+            deleteBtn.addEventListener('click', function() {
+                const checkedBoxes = document.querySelectorAll('.socio-checkbox:checked');
+                if (checkedBoxes.length === 0) {
+                    noSociosMessage.classList.remove('hidden');
+                } else {
+                    confirmModal.classList.remove('hidden');
+                }
+            });
+
+            // Modal Cancel button
+            modalCancelBtn.addEventListener('click', function() {
+                confirmModal.classList.add('hidden');
+            });
+
+            // Confirm button
+            confirmBtn.addEventListener('click', function() {
+                deleteForm.submit();
+            });
+        });
+
+        // Funções para o modal de mensagem
+        function showMessage(event, nome, mensagem) {
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            
+            const modal = document.getElementById('messageModal');
+            const title = document.getElementById('messageTitle');
+            const content = document.getElementById('messageContent');
+            
+            title.textContent = 'Descrição de ' + nome;
+            content.textContent = mensagem;
+            modal.classList.remove('hidden');
+
+            // Adicionar listener para fechar no ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    hideMessage();
+                }
+            });
+
+            // Adicionar listener para fechar no clique fora
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    hideMessage();
+                }
+            });
+        }
+
+        function hideMessage() {
+            const modal = document.getElementById('messageModal');
+            modal.classList.add('hidden');
+        }
+    </script>
 </body>
 </html>

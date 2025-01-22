@@ -25,3 +25,14 @@ def index(request):
 def lista_socios(request):
     socios = Socio.objects.all().order_by('-data_cadastro')
     return render(request, 'appvip/lista_socios.html', {'socios': socios})
+
+def delete_socios(request):
+    if request.method == 'POST':
+        socio_ids = request.POST.getlist('socios[]')
+        try:
+            Socio.objects.filter(id__in=socio_ids).delete()
+            messages.success(request, 'Sócios selecionados foram excluídos com sucesso!')
+        except Exception as e:
+            messages.error(request, 'Erro ao excluir sócios. Por favor, tente novamente.')
+    
+    return redirect('lista_socios')

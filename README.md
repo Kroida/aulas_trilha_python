@@ -50,3 +50,7 @@ Este repositório contém as aulas e desafios relacionados à biblioteca Tkinter
 ### Aula 40: Criando um site com Django
 - Técnicas de banco de dados.
 - Resolução de problemas.
+
+### Aula 41: Tentando criar um site de ações
+-
+-
