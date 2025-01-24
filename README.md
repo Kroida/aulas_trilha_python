@@ -52,5 +52,7 @@ Este repositório contém as aulas e desafios relacionados à biblioteca Tkinter
 - Resolução de problemas.
 
 ### Aula 41: Tentando criar um site de ações
--
--
+- Fracasso 1
+- Fracasso 2
+
+### Aula 42:
