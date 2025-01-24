@@ -55,4 +55,5 @@ Este repositório contém as aulas e desafios relacionados à biblioteca Tkinter
 - Fracasso 1
 - Fracasso 2
 
-### Aula 42:
+### Aula 42: Entendendo Django do zero
+- Arquitetura, caminhos, comandos,...
