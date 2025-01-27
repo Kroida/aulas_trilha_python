@@ -1,3 +1,64 @@
+:root {
+    --rosinha: #fe6171;
+    --dark: #212121;
+}
+
+* {
+    color: var(--rosinha);
+}
+
+body {
+    background-color: var(--dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
 h1 {
-    color: red;
+    margin: 0 0 10px 0;
+    font-size: 50px;
+}
+
+h2:nth-child(2) {
+    margin: -10px 0 10px 0;
+}
+
+img {
+    background-color: var(--rosinha);
+    width: 500px;
+    border-radius: 20px;
+}
+
+button {
+    all: unset; /* Reseta todos os estilos padrão */
+    cursor: pointer; /* Garante que o cursor de "mão" permaneça para interações */
+    background-color: #2f2f2f;
+    margin-top: 20px;
+    padding: 10px 20px;
+}
+
+button:hover {
+    background-color: #3f3f3f;
+}
+
+button a {
+    text-decoration: none;
+}
+
+form {
+    position: absolute;
+    top: 14.7vh;
+    right: 11vw;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    border: 1px solid var(--rosinha);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+input {
+    color: black;
 }

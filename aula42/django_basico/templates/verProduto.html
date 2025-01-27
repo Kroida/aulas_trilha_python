@@ -1,14 +1,31 @@
-{% load static %}
+{% load static %} <!-- para usar o static -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ver Produto</title>
-    <link rel="stylesheet" href="{% static 'produtos/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'produtos/css/style.css' %}"> <!-- link para o css -->
 </head>
 <body>
-    <h1>Olá {{nome}}, tudo bem?</h1>
+    <h2>{{ nome }}</h2>
+    <h1>Melancia</h1>
+
+    <img src="{% static 'produtos/img/watermelon.png' %}" alt="Melancia"> <!-- imagem -->
+
     <button><a href="{% url 'inserir_produto' %}">Inserir Produto</a></button>
+
+    <form action="{% url 'ver_produto' %}" method="POST">
+        {% csrf_token %} <!-- token de segurança -->
+        <br>
+        <br>
+        <input type="text" name="nome" placeholder="Digite seu nome">
+        <br>
+        <br>
+        <input type="number" name="idade" placeholder="Digite sua idade">
+        <br>
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
 </body>
 </html>
