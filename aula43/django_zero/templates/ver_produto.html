@@ -1,0 +1,26 @@
+{% load static %} <!-- carrega os arquivos staticos -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ver_produto</title>
+    <link rel="stylesheet" href="{% static 'css/ver_produto.css' %}"> <!-- link para o css -->
+</head>
+<body>
+    <h1>Olá, {{nome}} tudo bem?</h1>
+    <img src="{% static 'produtos/img/dog.png' %}" alt="Dog"> <!-- link para o imagem -->
+    <button>Ok</button>
+
+    <form action="{% url 'ver_produto' %}" method="post"> <!-- form para enviar o nome e a idade -->
+        {% csrf_token %} <!-- token de segurança -->
+        <input type="text" name="nome" placeholder="Digite seu nome">
+        <br>
+        <br>
+        <input type="number" name="idade" placeholder="Digite sua idade">
+        <br>
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

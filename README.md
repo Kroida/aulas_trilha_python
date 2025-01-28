@@ -58,3 +58,6 @@ Este repositório contém as aulas e desafios relacionados à biblioteca Tkinter
 ### Aula 42: Aula Pythonando
 - Entendendo arquitetura
 - Executando conceitos
+
+### Aula 43: Terminando o vídeo
+- Entendendo models e admin
