@@ -55,9 +55,15 @@ Este repositório contém as aulas e desafios relacionados à biblioteca Tkinter
 - Fracasso 1
 - Fracasso 2
 
-### Aula 42: Aula Pythonando
+### Aula 42: Pythonando: Introdução ao Django
 - Entendendo arquitetura
 - Executando conceitos
 
-### Aula 43: Terminando o vídeo
-- Entendendo models e admin
+### Aula 43: Pythonando: Introdução ao Django - final
+- Criando uma classe em models
+- Entendendo a parte administrativa
+
+### Aula 44: Fazendo um sistema de compras
+- Layout bonito
+- Compra de item
+- Validações e prevenções

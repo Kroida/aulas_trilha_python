@@ -4,7 +4,7 @@ from django.http import HttpResponse
 # Create your views here.
 def ver_produto(request):
     if request.method == 'GET':
-        nome = request.GET['nome']
+        nome = request.GET.get('nome', 'Visitante')
         return render(request, 'ver_produto.html', {'nome': nome})
     elif request.method == 'POST':
         nome = request.POST.get('nome')

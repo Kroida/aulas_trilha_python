@@ -1,0 +1,89 @@
+:root {
+    --dark: #212121;
+    --bread: #f7dda4;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.bindex {
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    font-weight: bold;
+}
+
+.bindex img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.mindex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: -16rem;
+    gap: 5rem;
+    z-index: 1;
+}
+
+.mindex h1 {
+    font-size: 40px;
+    text-shadow: 0 0 10px black;
+}
+
+.mindex a {
+    background-color: none;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #ffffff;
+    box-shadow: 0 3px 10px black;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+/* ---------------------------------------------------------------- */
+
+.cmain {
+    background-color: #212121;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 20px;
+    width: 33vw;
+    height: 75vh;
+    gap: 10vh;
+    z-index: 1;
+}
+
+.cmain img {
+    position: relative;
+    width: 30vw;
+    height: 50vh;
+}
+
+.cmain form input {
+    all: unset;
+    cursor: pointer;
+    background-color: #2f2f2f;
+    color: var(--bread);
+    border: 1px solid var(--bread);
+    font-size: 20px;
+    padding: 1vh 3vw 1vh 3vw;
+}
