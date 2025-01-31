@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento PIX</title>
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="bindex">
+    <img src="{% static 'home/img/background.jpg' %}" alt="Pão">
+
+    <main class="qmain">
+        <h2>Pagamento PIX</h2>
+        <div class="qr-code-container">
+            <img src="{{ qr_code_path }}" alt="QR Code PIX">
+            
+            <div class="pix-code">
+                <p>Código PIX:</p>
+                <textarea readonly>{{ qr_code_text }}</textarea>
+                <button onclick="copyToClipboard()">Copiar código</button>
+            </div>
+            
+            <p>ID da transação: {{ reference_id }}</p>
+        </div>
+    </main>
+
+    <script>
+    function copyToClipboard() {
+        var copyText = document.querySelector("textarea");
+        copyText.select();
+        document.execCommand("copy");
+        alert("Código PIX copiado!");
+    }
+    </script>
+</body>
+</html>

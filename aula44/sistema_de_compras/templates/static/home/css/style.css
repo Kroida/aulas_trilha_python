@@ -87,3 +87,68 @@
     font-size: 20px;
     padding: 1vh 3vw 1vh 3vw;
 }
+
+/* ---------------------------------------------------------------- */
+
+.qmain {
+    background-color: #212121;
+    color: var(--bread);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 20px;
+    width: 45vw;
+    height: 85vh;
+    padding: 30px;
+    font-size: 15px;
+    gap: 3.5vh;
+    z-index: 1;
+}
+
+.qmain h2 {
+    font-size: 15px;
+}
+
+.qr-code-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 1vh;
+}
+
+.qr-code-container img {
+    position: relative;
+    width: 22vw;
+    height: 45vh;
+}
+
+.pix-code {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+}
+
+.pix-code textarea {
+    all: unset;
+    cursor: pointer;
+    background-color: #2f2f2f;
+    border: 1px solid var(--bread);
+    font-size: 5px;
+    width: 31em;
+    height: 7em;
+    padding: 3px;
+}
+
+.pix-code button {
+    all: unset;
+    cursor: pointer;
+    background-color: #2f2f2f;
+    border: 1px solid var(--bread);
+    font-size: 5px;
+    padding: 3px;
+}

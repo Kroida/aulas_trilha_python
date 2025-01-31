@@ -124,3 +124,11 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'templates/static')]
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Pagbank
+PAGBANK_API_URL = 'https://sandbox.api.pagseguro.com'
+PAGBANK_TOKEN = '1D5249E816B84EB08F540475E46CEF9C'
+
+# QR Code
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

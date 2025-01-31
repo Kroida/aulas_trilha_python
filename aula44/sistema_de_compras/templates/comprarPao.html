@@ -17,7 +17,8 @@
     <main class="cmain">
         <img src="https://tinyurl.com/bdftynwr" alt="">
 
-        <form action="" method="">
+        <form action="" method="POST">
+            {% csrf_token %}
             <input type="submit" value="Comprar">
         </form>
     </main>
