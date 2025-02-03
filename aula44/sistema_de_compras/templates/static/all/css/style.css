@@ -1,0 +1,266 @@
+:root {
+    --dark: #212121;
+    --bread: #f7dda4;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.bindex {
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    font-weight: bold;
+    overflow-x: hidden;
+}
+
+.bindex img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.8);
+}
+
+.mindex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    gap: 3rem;
+    z-index: 1;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.mindex h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.mindex a {
+    background-color: transparent;
+    color: #ffffff;
+    text-decoration: none;
+    padding: clamp(0.8rem, 2vw, 1.2rem) clamp(1.5rem, 3vw, 2rem);
+    border: 2px solid #ffffff;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    transition: all 0.3s ease;
+}
+
+.mindex a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+@media screen and (max-width: 768px) {
+    .mindex {
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .mindex {
+        gap: 1.5rem;
+    }
+    
+    .bindex img {
+        height: 100%;
+    }
+}
+
+/* ---------------------------------------------------------------- */
+
+.cmain {
+    background-color: rgba(33, 33, 33, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    border-radius: clamp(10px, 2vw, 20px);
+    width: min(90%, 400px);
+    aspect-ratio: 3/4;
+    padding: clamp(1rem, 3vw, 2rem);
+    gap: clamp(1.5rem, 4vh, 3rem);
+    z-index: 1;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease;
+}
+
+.cmain:hover {
+    transform: translateY(-5px);
+}
+
+.cmain img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: clamp(8px, 1.5vw, 15px);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cmain form {
+    width: 100%;
+}
+
+.cmain form input {
+    all: unset;
+    cursor: pointer;
+    background-color: #2f2f2f;
+    color: var(--bread);
+    border: 2px solid var(--bread);
+    border-radius: 50px;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    padding: clamp(0.5rem, 1.5vw, 1rem) clamp(1.5rem, 3vw, 2.5rem);
+    width: min(100%, 200px);
+    transition: all 0.3s ease;
+}
+
+.cmain form input:hover {
+    background-color: var(--bread);
+    color: #2f2f2f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(247, 221, 164, 0.3);
+}
+
+@media screen and (max-width: 768px) {
+    .cmain {
+        width: min(95%, 350px);
+        gap: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cmain {
+        width: 95%;
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    .cmain form input {
+        width: min(100%, 180px);
+        font-size: 1rem;
+        padding: 0.5rem 1.5rem;
+    }
+}
+
+/* ---------------------------------------------------------------- */
+
+.qmain {
+    background-color: rgba(33, 33, 33, 0.95);
+    color: var(--bread);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    border-radius: clamp(10px, 2vw, 20px);
+    width: min(90%, 500px);
+    padding: clamp(1rem, 3vw, 2rem);
+    gap: clamp(1rem, 2vh, 2rem);
+    z-index: 1;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease;
+}
+
+.qmain:hover {
+    transform: translateY(-5px);
+}
+
+.qmain h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 0.5rem;
+}
+
+.qmain img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    border-radius: clamp(8px, 1.5vw, 15px);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+.qmain textarea {
+    all: unset;
+    cursor: pointer;
+    background-color: #2f2f2f;
+    border: 1px solid var(--bread);
+    border-radius: 5px;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    min-height: 50px;
+    padding: 0.5rem;
+    text-align: justify;
+    overflow: hidden;
+    resize: none;
+}
+
+.qmain button {
+    all: unset;
+    cursor: pointer;
+    background-color: #2f2f2f;
+    border: 1px solid var(--bread);
+    border-radius: 20px;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.qmain button:hover {
+    background-color: var(--bread);
+    color: #2f2f2f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(247, 221, 164, 0.3);
+}
+
+.qmain p {
+    font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .qmain {
+        width: min(95%, 450px);
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .qmain {
+        width: 95%;
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+    
+    .qmain textarea {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+
+    .qmain button {
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+    }
+}
