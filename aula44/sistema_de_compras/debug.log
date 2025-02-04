@@ -1,0 +1,1046 @@
+INFO 2025-02-04 15:14:02,529 services Criando cobrança PIX: valor=0.1, descricao=Compra de produto
+ERROR 2025-02-04 15:14:02,529 services Erro ao criar cobrança PIX: 'certificate'
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 37, in criar_cobranca
+    response = self.gn.pix_create_immediate_charge(body=body)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 46, in request
+    self.authenticate()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 92, in authenticate
+    if(self.options['certificate']):
+KeyError: 'certificate'
+ERROR 2025-02-04 15:14:02,537 views Erro no processamento do pagamento: 'certificate'
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\views.py", line 21, in processar_pagamento
+    resultado = pix_service.criar_cobranca(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 37, in criar_cobranca
+    response = self.gn.pix_create_immediate_charge(body=body)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 46, in request
+    self.authenticate()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 92, in authenticate
+    if(self.options['certificate']):
+KeyError: 'certificate'
+INFO 2025-02-04 15:17:32,784 services Criando cobrança PIX: valor=0.1, descricao=Compra de produto
+ERROR 2025-02-04 15:17:32,786 services Erro ao criar cobrança PIX: 'certificate'
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 37, in criar_cobranca
+    response = self.gn.pix_create_immediate_charge(body=body)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 46, in request
+    self.authenticate()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 92, in authenticate
+    if(self.options['certificate']):
+KeyError: 'certificate'
+ERROR 2025-02-04 15:17:32,794 views Erro no processamento do pagamento: 'certificate'
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\views.py", line 21, in processar_pagamento
+    resultado = pix_service.criar_cobranca(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 37, in criar_cobranca
+    response = self.gn.pix_create_immediate_charge(body=body)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 46, in request
+    self.authenticate()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 92, in authenticate
+    if(self.options['certificate']):
+KeyError: 'certificate'
+INFO 2025-02-04 15:22:11,659 services Inicializando PixService com certificado: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\producao.p12
+INFO 2025-02-04 15:22:11,662 services Certificado lido com sucesso. Tamanho: 2657 bytes
+INFO 2025-02-04 15:22:11,665 services Certificado temporário criado em: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\temp_cert.p12
+INFO 2025-02-04 15:22:11,666 services Tentando inicializar cliente Gerencianet...
+INFO 2025-02-04 15:22:11,666 services Cliente Gerencianet inicializado com sucesso
+INFO 2025-02-04 15:22:11,667 services Certificado temporário removido
+INFO 2025-02-04 15:22:11,668 services Criando cobrança PIX: valor=0.1, descricao=Compra de produto
+DEBUG 2025-02-04 15:22:11,669 services Payload da cobrança: {'calendario': {'expiracao': 3600}, 'valor': {'original': '0.10'}, 'chave': '0b1508a2-a6e3-40be-b171-033c4968e5d1', 'solicitacaoPagador': 'Compra de produto'}
+ERROR 2025-02-04 15:22:11,670 services Erro ao criar cobrança PIX: 'certificate'
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 76, in criar_cobranca
+    response = self.gn.pix_create_immediate_charge(body=body)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 46, in request
+    self.authenticate()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 92, in authenticate
+    if(self.options['certificate']):
+KeyError: 'certificate'
+ERROR 2025-02-04 15:22:11,675 views Erro no processamento do pagamento: 'certificate'
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\views.py", line 21, in processar_pagamento
+    resultado = pix_service.criar_cobranca(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 76, in criar_cobranca
+    response = self.gn.pix_create_immediate_charge(body=body)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 46, in request
+    self.authenticate()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 92, in authenticate
+    if(self.options['certificate']):
+KeyError: 'certificate'
+INFO 2025-02-04 15:25:04,990 services Inicializando PixService com certificado: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\producao-697486-Padaria.p12
+INFO 2025-02-04 15:25:04,990 services Certificado lido com sucesso. Tamanho: 2657 bytes
+INFO 2025-02-04 15:25:05,009 services Certificado temporário criado em: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\temp_cert.p12
+INFO 2025-02-04 15:25:05,010 services Tentando inicializar cliente Gerencianet...
+INFO 2025-02-04 15:25:05,011 services Cliente Gerencianet inicializado com sucesso
+INFO 2025-02-04 15:25:05,012 services Certificado temporário removido
+INFO 2025-02-04 15:25:05,013 services Criando cobrança PIX: valor=0.1, descricao=Compra de produto
+DEBUG 2025-02-04 15:25:05,014 services Payload da cobrança: {'calendario': {'expiracao': 3600}, 'valor': {'original': '0.10'}, 'chave': '0b1508a2-a6e3-40be-b171-033c4968e5d1', 'solicitacaoPagador': 'Compra de produto'}
+ERROR 2025-02-04 15:25:05,015 services Erro ao criar cobrança PIX: 'certificate'
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 76, in criar_cobranca
+    response = self.gn.pix_create_immediate_charge(body=body)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 46, in request
+    self.authenticate()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 92, in authenticate
+    if(self.options['certificate']):
+KeyError: 'certificate'
+ERROR 2025-02-04 15:25:05,018 views Erro no processamento do pagamento: 'certificate'
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\views.py", line 21, in processar_pagamento
+    resultado = pix_service.criar_cobranca(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 76, in criar_cobranca
+    response = self.gn.pix_create_immediate_charge(body=body)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 46, in request
+    self.authenticate()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 92, in authenticate
+    if(self.options['certificate']):
+KeyError: 'certificate'
+INFO 2025-02-04 15:26:41,304 services Inicializando PixService com certificado: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\producao-697486-Padaria.p12
+INFO 2025-02-04 15:26:41,308 services Certificado lido com sucesso. Tamanho: 2657 bytes
+INFO 2025-02-04 15:26:41,311 services Certificado temporário criado em: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\temp_cert_43b8e43b-e751-4296-9422-44b9f7885521.p12
+INFO 2025-02-04 15:26:41,312 services Tentando inicializar cliente Gerencianet...
+INFO 2025-02-04 15:26:41,313 services Cliente Gerencianet inicializado com sucesso
+INFO 2025-02-04 15:26:41,314 services Criando cobrança PIX: valor=0.1, descricao=Compra de produto
+DEBUG 2025-02-04 15:26:41,315 services Payload da cobrança: {'calendario': {'expiracao': 3600}, 'valor': {'original': '0.10'}, 'chave': '0b1508a2-a6e3-40be-b171-033c4968e5d1', 'solicitacaoPagador': 'Compra de produto'}
+ERROR 2025-02-04 15:26:41,316 services Erro ao criar cobrança PIX: 'certificate'
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 82, in criar_cobranca
+    response = self.gn.pix_create_immediate_charge(body=body)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 46, in request
+    self.authenticate()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 92, in authenticate
+    if(self.options['certificate']):
+KeyError: 'certificate'
+ERROR 2025-02-04 15:26:41,318 views Erro no processamento do pagamento: 'certificate'
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\views.py", line 21, in processar_pagamento
+    resultado = pix_service.criar_cobranca(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 82, in criar_cobranca
+    response = self.gn.pix_create_immediate_charge(body=body)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 46, in request
+    self.authenticate()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 92, in authenticate
+    if(self.options['certificate']):
+KeyError: 'certificate'
+INFO 2025-02-04 15:26:41,323 services Certificado temporário removido
+INFO 2025-02-04 15:26:58,762 services Inicializando PixService com certificado: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\producao-697486-Padaria.p12
+INFO 2025-02-04 15:26:58,764 services Certificado lido com sucesso. Tamanho: 2657 bytes
+INFO 2025-02-04 15:26:58,765 services Certificado temporário criado em: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\temp_cert_64725b55-ac0e-44f4-b283-7848f902552d.p12
+INFO 2025-02-04 15:26:58,765 services Tentando inicializar cliente Gerencianet...
+INFO 2025-02-04 15:26:58,765 services Cliente Gerencianet inicializado com sucesso
+INFO 2025-02-04 15:26:58,770 services Criando cobrança PIX: valor=0.1, descricao=Compra de produto
+DEBUG 2025-02-04 15:26:58,770 services Payload da cobrança: {'calendario': {'expiracao': 3600}, 'valor': {'original': '0.10'}, 'chave': '0b1508a2-a6e3-40be-b171-033c4968e5d1', 'solicitacaoPagador': 'Compra de produto'}
+ERROR 2025-02-04 15:26:58,771 services Erro ao criar cobrança PIX: 'certificate'
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 82, in criar_cobranca
+    response = self.gn.pix_create_immediate_charge(body=body)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 46, in request
+    self.authenticate()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 92, in authenticate
+    if(self.options['certificate']):
+KeyError: 'certificate'
+ERROR 2025-02-04 15:26:58,777 views Erro no processamento do pagamento: 'certificate'
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\views.py", line 21, in processar_pagamento
+    resultado = pix_service.criar_cobranca(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 82, in criar_cobranca
+    response = self.gn.pix_create_immediate_charge(body=body)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 46, in request
+    self.authenticate()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 92, in authenticate
+    if(self.options['certificate']):
+KeyError: 'certificate'
+INFO 2025-02-04 15:26:58,781 services Certificado temporário removido
+INFO 2025-02-04 15:28:20,906 services Inicializando PixService com certificado: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\producao-697486-Padaria.p12
+INFO 2025-02-04 15:28:20,909 services Certificado lido com sucesso. Tamanho: 2657 bytes
+INFO 2025-02-04 15:28:20,909 services Certificado temporário criado em: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\temp_cert_3e3feae8-534d-4e7d-b3bc-d856e21e1888.p12
+INFO 2025-02-04 15:28:20,914 services Tentando inicializar cliente Gerencianet...
+INFO 2025-02-04 15:28:20,914 services Cliente Gerencianet inicializado com sucesso
+INFO 2025-02-04 15:28:20,915 services Criando cobrança PIX: valor=0.1, descricao=Compra de produto
+DEBUG 2025-02-04 15:28:20,917 services Payload da cobrança: {'calendario': {'expiracao': 3600}, 'valor': {'original': '0.10'}, 'chave': '0b1508a2-a6e3-40be-b171-033c4968e5d1', 'solicitacaoPagador': 'Compra de produto'}
+ERROR 2025-02-04 15:28:21,109 services Erro ao criar cobrança PIX: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4044)')))
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connection.py", line 741, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connection.py", line 920, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\util\ssl_.py", line 454, in ssl_wrap_socket
+    context.load_cert_chain(certfile, keyfile)
+ssl.SSLError: [SSL] PEM lib (_ssl.c:4044)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+urllib3.exceptions.SSLError: [SSL] PEM lib (_ssl.c:4044)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4044)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 82, in criar_cobranca
+    response = self.gn.pix_create_immediate_charge(body=body)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 46, in request
+    self.authenticate()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 102, in authenticate
+    response = requests.post(url, headers=headers, data=payload, cert=cert)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\adapters.py", line 698, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4044)')))
+ERROR 2025-02-04 15:28:21,129 views Erro no processamento do pagamento: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4044)')))
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connection.py", line 741, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connection.py", line 920, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\util\ssl_.py", line 454, in ssl_wrap_socket
+    context.load_cert_chain(certfile, keyfile)
+ssl.SSLError: [SSL] PEM lib (_ssl.c:4044)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+urllib3.exceptions.SSLError: [SSL] PEM lib (_ssl.c:4044)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4044)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\views.py", line 21, in processar_pagamento
+    resultado = pix_service.criar_cobranca(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 82, in criar_cobranca
+    response = self.gn.pix_create_immediate_charge(body=body)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 46, in request
+    self.authenticate()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 102, in authenticate
+    response = requests.post(url, headers=headers, data=payload, cert=cert)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\adapters.py", line 698, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4044)')))
+INFO 2025-02-04 15:28:21,456 services Certificado temporário removido
+INFO 2025-02-04 15:30:31,066 services Inicializando PixService com certificado: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\producao-697486-Padaria.p12
+ERROR 2025-02-04 15:30:31,067 services Erro ao processar certificado: module 'OpenSSL.crypto' has no attribute 'load_pkcs12'
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 26, in __init__
+    p12 = crypto.load_pkcs12(cert_file.read())
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\cryptography\utils.py", line 68, in __getattr__
+    obj = getattr(self._module, attr)
+AttributeError: module 'OpenSSL.crypto' has no attribute 'load_pkcs12'
+ERROR 2025-02-04 15:30:31,072 views Erro no processamento do pagamento: Erro ao processar certificado: module 'OpenSSL.crypto' has no attribute 'load_pkcs12'
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 26, in __init__
+    p12 = crypto.load_pkcs12(cert_file.read())
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\cryptography\utils.py", line 68, in __getattr__
+    obj = getattr(self._module, attr)
+AttributeError: module 'OpenSSL.crypto' has no attribute 'load_pkcs12'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\views.py", line 18, in processar_pagamento
+    pix_service = PixService()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 55, in __init__
+    raise Exception(f"Erro ao processar certificado: {str(e)}")
+Exception: Erro ao processar certificado: module 'OpenSSL.crypto' has no attribute 'load_pkcs12'
+INFO 2025-02-04 15:31:56,956 services Inicializando PixService com certificado: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\producao-697486-Padaria.p12
+ERROR 2025-02-04 15:31:56,957 services Erro ao processar certificado: 'NoneType' object has no attribute 'encode'
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 29, in __init__
+    password=None.encode() if settings.GERENCIANET_PIX.get('CERT_PASSWORD') is None
+AttributeError: 'NoneType' object has no attribute 'encode'
+ERROR 2025-02-04 15:31:56,958 views Erro no processamento do pagamento: Erro ao processar certificado: 'NoneType' object has no attribute 'encode'
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 29, in __init__
+    password=None.encode() if settings.GERENCIANET_PIX.get('CERT_PASSWORD') is None
+AttributeError: 'NoneType' object has no attribute 'encode'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\views.py", line 18, in processar_pagamento
+    pix_service = PixService()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 68, in __init__
+    raise Exception(f"Erro ao processar certificado: {str(e)}")
+Exception: Erro ao processar certificado: 'NoneType' object has no attribute 'encode'
+INFO 2025-02-04 15:32:08,986 services Inicializando PixService com certificado: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\producao-697486-Padaria.p12
+ERROR 2025-02-04 15:32:08,988 services Erro ao processar certificado: 'NoneType' object has no attribute 'encode'
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 29, in __init__
+    password=None.encode() if settings.GERENCIANET_PIX.get('CERT_PASSWORD') is None
+AttributeError: 'NoneType' object has no attribute 'encode'
+ERROR 2025-02-04 15:32:08,991 views Erro no processamento do pagamento: Erro ao processar certificado: 'NoneType' object has no attribute 'encode'
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 29, in __init__
+    password=None.encode() if settings.GERENCIANET_PIX.get('CERT_PASSWORD') is None
+AttributeError: 'NoneType' object has no attribute 'encode'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\views.py", line 18, in processar_pagamento
+    pix_service = PixService()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 68, in __init__
+    raise Exception(f"Erro ao processar certificado: {str(e)}")
+Exception: Erro ao processar certificado: 'NoneType' object has no attribute 'encode'
+INFO 2025-02-04 15:33:27,880 services Inicializando PixService com certificado: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\producao-697486-Padaria.p12
+INFO 2025-02-04 15:33:27,948 services Certificado PKCS12 lido com sucesso
+INFO 2025-02-04 15:33:27,953 services Certificado PEM criado em: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\temp_cert_216ef5b8-2d58-4c37-b497-8c8a43bd6ae0.pem
+INFO 2025-02-04 15:33:27,954 services Chave privada PEM criada em: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\temp_key_216ef5b8-2d58-4c37-b497-8c8a43bd6ae0.pem
+INFO 2025-02-04 15:33:27,957 services Tentando inicializar cliente Gerencianet...
+INFO 2025-02-04 15:33:27,958 services Cliente Gerencianet inicializado com sucesso
+INFO 2025-02-04 15:33:27,959 services Criando cobrança PIX: valor=0.1, descricao=Compra de produto
+DEBUG 2025-02-04 15:33:27,959 services Payload da cobrança: {'calendario': {'expiracao': 3600}, 'valor': {'original': '0.10'}, 'chave': '0b1508a2-a6e3-40be-b171-033c4968e5d1', 'solicitacaoPagador': 'Compra de produto'}
+ERROR 2025-02-04 15:33:28,147 services Erro ao criar cobrança PIX: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4065)')))
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connection.py", line 741, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connection.py", line 920, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\util\ssl_.py", line 454, in ssl_wrap_socket
+    context.load_cert_chain(certfile, keyfile)
+ssl.SSLError: [SSL] PEM lib (_ssl.c:4065)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+urllib3.exceptions.SSLError: [SSL] PEM lib (_ssl.c:4065)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4065)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 119, in criar_cobranca
+    response = self.gn.pix_create_immediate_charge(body=body)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 46, in request
+    self.authenticate()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 102, in authenticate
+    response = requests.post(url, headers=headers, data=payload, cert=cert)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\adapters.py", line 698, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4065)')))
+ERROR 2025-02-04 15:33:28,161 views Erro no processamento do pagamento: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4065)')))
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connection.py", line 741, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connection.py", line 920, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\util\ssl_.py", line 454, in ssl_wrap_socket
+    context.load_cert_chain(certfile, keyfile)
+ssl.SSLError: [SSL] PEM lib (_ssl.c:4065)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+urllib3.exceptions.SSLError: [SSL] PEM lib (_ssl.c:4065)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4065)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\views.py", line 21, in processar_pagamento
+    resultado = pix_service.criar_cobranca(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 119, in criar_cobranca
+    response = self.gn.pix_create_immediate_charge(body=body)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 46, in request
+    self.authenticate()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 102, in authenticate
+    response = requests.post(url, headers=headers, data=payload, cert=cert)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\adapters.py", line 698, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4065)')))
+INFO 2025-02-04 15:33:42,878 services Arquivo temporário removido: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\temp_cert_216ef5b8-2d58-4c37-b497-8c8a43bd6ae0.pem
+INFO 2025-02-04 15:33:42,878 services Arquivo temporário removido: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\temp_key_216ef5b8-2d58-4c37-b497-8c8a43bd6ae0.pem
+INFO 2025-02-04 15:33:49,337 services Inicializando PixService com certificado: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\producao-697486-Padaria.p12
+INFO 2025-02-04 15:33:49,400 services Certificado PKCS12 lido com sucesso
+INFO 2025-02-04 15:33:49,412 services Certificado PEM criado em: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\temp_cert_1cdc3917-d834-4d95-8c41-511e6ef05760.pem
+INFO 2025-02-04 15:33:49,413 services Chave privada PEM criada em: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\temp_key_1cdc3917-d834-4d95-8c41-511e6ef05760.pem
+INFO 2025-02-04 15:33:49,414 services Tentando inicializar cliente Gerencianet...
+INFO 2025-02-04 15:33:49,414 services Cliente Gerencianet inicializado com sucesso
+INFO 2025-02-04 15:33:49,414 services Criando cobrança PIX: valor=0.1, descricao=Compra de produto
+DEBUG 2025-02-04 15:33:49,415 services Payload da cobrança: {'calendario': {'expiracao': 3600}, 'valor': {'original': '0.10'}, 'chave': '0b1508a2-a6e3-40be-b171-033c4968e5d1', 'solicitacaoPagador': 'Compra de produto'}
+ERROR 2025-02-04 15:33:49,575 services Erro ao criar cobrança PIX: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4065)')))
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connection.py", line 741, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connection.py", line 920, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\util\ssl_.py", line 454, in ssl_wrap_socket
+    context.load_cert_chain(certfile, keyfile)
+ssl.SSLError: [SSL] PEM lib (_ssl.c:4065)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+urllib3.exceptions.SSLError: [SSL] PEM lib (_ssl.c:4065)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4065)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 119, in criar_cobranca
+    response = self.gn.pix_create_immediate_charge(body=body)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 46, in request
+    self.authenticate()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 102, in authenticate
+    response = requests.post(url, headers=headers, data=payload, cert=cert)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\adapters.py", line 698, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4065)')))
+ERROR 2025-02-04 15:33:49,592 views Erro no processamento do pagamento: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4065)')))
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connection.py", line 741, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connection.py", line 920, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\util\ssl_.py", line 454, in ssl_wrap_socket
+    context.load_cert_chain(certfile, keyfile)
+ssl.SSLError: [SSL] PEM lib (_ssl.c:4065)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+urllib3.exceptions.SSLError: [SSL] PEM lib (_ssl.c:4065)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4065)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\views.py", line 21, in processar_pagamento
+    resultado = pix_service.criar_cobranca(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 119, in criar_cobranca
+    response = self.gn.pix_create_immediate_charge(body=body)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 46, in request
+    self.authenticate()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 102, in authenticate
+    response = requests.post(url, headers=headers, data=payload, cert=cert)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\adapters.py", line 698, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4065)')))
+INFO 2025-02-04 15:33:49,906 services Arquivo temporário removido: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\temp_cert_1cdc3917-d834-4d95-8c41-511e6ef05760.pem
+INFO 2025-02-04 15:33:49,908 services Arquivo temporário removido: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\temp_key_1cdc3917-d834-4d95-8c41-511e6ef05760.pem
+INFO 2025-02-04 15:35:33,544 services Inicializando PixService com certificado: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\producao-697486-Padaria.p12
+INFO 2025-02-04 15:35:33,545 services Tentando inicializar cliente Gerencianet...
+INFO 2025-02-04 15:35:33,545 services Cliente Gerencianet inicializado com sucesso
+INFO 2025-02-04 15:35:33,546 services Criando cobrança PIX: valor=0.1, descricao=Compra de produto
+DEBUG 2025-02-04 15:35:33,546 services Payload da cobrança: {'calendario': {'expiracao': 3600}, 'valor': {'original': '0.10'}, 'chave': '0b1508a2-a6e3-40be-b171-033c4968e5d1', 'solicitacaoPagador': 'Compra de produto'}
+ERROR 2025-02-04 15:35:33,547 services Erro ao criar cobrança PIX: 'certificate'
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 49, in criar_cobranca
+    response = self.gn.pix_create_immediate_charge(body=body)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 46, in request
+    self.authenticate()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 92, in authenticate
+    if(self.options['certificate']):
+KeyError: 'certificate'
+ERROR 2025-02-04 15:35:33,549 views Erro no processamento do pagamento: 'certificate'
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\views.py", line 21, in processar_pagamento
+    resultado = pix_service.criar_cobranca(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 49, in criar_cobranca
+    response = self.gn.pix_create_immediate_charge(body=body)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 46, in request
+    self.authenticate()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 92, in authenticate
+    if(self.options['certificate']):
+KeyError: 'certificate'
+INFO 2025-02-04 15:36:18,795 services Inicializando PixService com certificado: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\producao-697486-Padaria.p12
+INFO 2025-02-04 15:36:18,796 services Tentando inicializar cliente Gerencianet...
+INFO 2025-02-04 15:36:18,796 services Cliente Gerencianet inicializado com sucesso
+INFO 2025-02-04 15:36:18,797 services Criando cobrança PIX: valor=0.1, descricao=Compra de produto
+DEBUG 2025-02-04 15:36:18,797 services Payload da cobrança: {'calendario': {'expiracao': 3600}, 'valor': {'original': '0.10'}, 'chave': '0b1508a2-a6e3-40be-b171-033c4968e5d1', 'solicitacaoPagador': 'Compra de produto'}
+ERROR 2025-02-04 15:36:18,980 services Erro ao criar cobrança PIX: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4044)')))
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connection.py", line 741, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connection.py", line 920, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\util\ssl_.py", line 454, in ssl_wrap_socket
+    context.load_cert_chain(certfile, keyfile)
+ssl.SSLError: [SSL] PEM lib (_ssl.c:4044)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+urllib3.exceptions.SSLError: [SSL] PEM lib (_ssl.c:4044)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4044)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 49, in criar_cobranca
+    response = self.gn.pix_create_immediate_charge(body=body)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 46, in request
+    self.authenticate()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 102, in authenticate
+    response = requests.post(url, headers=headers, data=payload, cert=cert)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\adapters.py", line 698, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4044)')))
+ERROR 2025-02-04 15:36:18,994 views Erro no processamento do pagamento: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4044)')))
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connection.py", line 741, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connection.py", line 920, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\util\ssl_.py", line 454, in ssl_wrap_socket
+    context.load_cert_chain(certfile, keyfile)
+ssl.SSLError: [SSL] PEM lib (_ssl.c:4044)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+urllib3.exceptions.SSLError: [SSL] PEM lib (_ssl.c:4044)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4044)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\views.py", line 21, in processar_pagamento
+    resultado = pix_service.criar_cobranca(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 49, in criar_cobranca
+    response = self.gn.pix_create_immediate_charge(body=body)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 46, in request
+    self.authenticate()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\gerencianet\endpoints.py", line 102, in authenticate
+    response = requests.post(url, headers=headers, data=payload, cert=cert)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\adapters.py", line 698, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4044)')))
+INFO 2025-02-04 15:37:28,713 services Inicializando PixService com certificado: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\producao-697486-Padaria.p12
+ERROR 2025-02-04 15:37:28,897 services Erro ao obter token de acesso: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4044)')))
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connection.py", line 741, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connection.py", line 920, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\util\ssl_.py", line 454, in ssl_wrap_socket
+    context.load_cert_chain(certfile, keyfile)
+ssl.SSLError: [SSL] PEM lib (_ssl.c:4044)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+urllib3.exceptions.SSLError: [SSL] PEM lib (_ssl.c:4044)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4044)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 43, in _get_access_token
+    response = requests.post(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\adapters.py", line 698, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4044)')))
+ERROR 2025-02-04 15:37:28,910 views Erro no processamento do pagamento: Erro ao obter token de acesso: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4044)')))
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connection.py", line 741, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connection.py", line 920, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\util\ssl_.py", line 454, in ssl_wrap_socket
+    context.load_cert_chain(certfile, keyfile)
+ssl.SSLError: [SSL] PEM lib (_ssl.c:4044)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+urllib3.exceptions.SSLError: [SSL] PEM lib (_ssl.c:4044)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4044)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 43, in _get_access_token
+    response = requests.post(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\requests\adapters.py", line 698, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4044)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\views.py", line 18, in processar_pagamento
+    pix_service = PixService()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 27, in __init__
+    self._get_access_token()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 59, in _get_access_token
+    raise Exception(f"Erro ao obter token de acesso: {str(e)}")
+Exception: Erro ao obter token de acesso: HTTPSConnectionPool(host='api-pix.gerencianet.com.br', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(9, '[SSL] PEM lib (_ssl.c:4044)')))
+INFO 2025-02-04 15:40:07,241 services Inicializando PixService com certificado: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\producao-697486-Padaria.p12
+ERROR 2025-02-04 15:40:07,243 services Erro ao preparar certificado: module 'OpenSSL.crypto' has no attribute 'load_pkcs12'
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 42, in _prepare_certificate
+    p12 = crypto.load_pkcs12(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\cryptography\utils.py", line 68, in __getattr__
+    obj = getattr(self._module, attr)
+AttributeError: module 'OpenSSL.crypto' has no attribute 'load_pkcs12'
+ERROR 2025-02-04 15:40:07,247 views Erro no processamento do pagamento: Erro ao preparar certificado: module 'OpenSSL.crypto' has no attribute 'load_pkcs12'
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 42, in _prepare_certificate
+    p12 = crypto.load_pkcs12(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\.venv\lib\site-packages\cryptography\utils.py", line 68, in __getattr__
+    obj = getattr(self._module, attr)
+AttributeError: module 'OpenSSL.crypto' has no attribute 'load_pkcs12'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\views.py", line 18, in processar_pagamento
+    pix_service = PixService()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 29, in __init__
+    self._prepare_certificate()
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 70, in _prepare_certificate
+    raise Exception(f"Erro ao preparar certificado: {str(e)}")
+Exception: Erro ao preparar certificado: module 'OpenSSL.crypto' has no attribute 'load_pkcs12'
+INFO 2025-02-04 15:41:02,132 services Inicializando PixService com certificado: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\producao-697486-Padaria.p12
+INFO 2025-02-04 15:41:02,207 services Certificado preparado com sucesso
+INFO 2025-02-04 15:41:02,838 services Token de acesso obtido com sucesso
+INFO 2025-02-04 15:41:02,841 services Criando cobrança PIX: valor=0.1, descricao=Compra de produto
+DEBUG 2025-02-04 15:41:02,841 services Payload da cobrança: {'calendario': {'expiracao': 3600}, 'valor': {'original': '0.10'}, 'chave': '0b1508a2-a6e3-40be-b171-033c4968e5d1', 'solicitacaoPagador': 'Compra de produto'}
+ERROR 2025-02-04 15:41:03,339 services Erro ao criar cobrança PIX: Erro ao criar cobrança: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 166, in criar_cobranca
+    raise Exception(f"Erro ao criar cobrança: {response.text}")
+Exception: Erro ao criar cobrança: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+ERROR 2025-02-04 15:41:03,343 views Erro no processamento do pagamento: Erro ao criar cobrança: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\views.py", line 21, in processar_pagamento
+    resultado = pix_service.criar_cobranca(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 166, in criar_cobranca
+    raise Exception(f"Erro ao criar cobrança: {response.text}")
+Exception: Erro ao criar cobrança: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+INFO 2025-02-04 15:42:10,180 services Inicializando PixService com certificado: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\producao-697486-Padaria.p12
+INFO 2025-02-04 15:42:10,257 services Certificado preparado com sucesso
+INFO 2025-02-04 15:42:10,819 services Token de acesso obtido com sucesso
+INFO 2025-02-04 15:42:10,822 services Criando cobrança PIX: valor=0.1, descricao=Compra de produto
+DEBUG 2025-02-04 15:42:10,823 services Payload da cobrança: {'calendario': {'expiracao': 3600}, 'valor': {'original': '0.10'}, 'chave': '0b1508a2-a6e3-40be-b171-033c4968e5d1', 'solicitacaoPagador': 'Compra de produto'}
+ERROR 2025-02-04 15:42:11,314 services Erro ao criar cobrança PIX: Erro ao criar cobrança: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 169, in criar_cobranca
+    raise Exception(f"Erro ao criar cobrança: {response.text}")
+Exception: Erro ao criar cobrança: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+ERROR 2025-02-04 15:42:11,316 views Erro no processamento do pagamento: Erro ao criar cobrança: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\views.py", line 21, in processar_pagamento
+    resultado = pix_service.criar_cobranca(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 169, in criar_cobranca
+    raise Exception(f"Erro ao criar cobrança: {response.text}")
+Exception: Erro ao criar cobrança: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+INFO 2025-02-04 15:43:00,595 services Inicializando PixService com certificado: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\producao-697486-Padaria.p12
+INFO 2025-02-04 15:43:00,660 services Certificado preparado com sucesso
+INFO 2025-02-04 15:43:01,208 services Token de acesso obtido com sucesso
+DEBUG 2025-02-04 15:43:01,209 services Resposta completa do token: {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiYWNjZXNzX3Rva2VuIiwiY2xpZW50SWQiOiJDbGllbnRfSWRfNWJiMWI1MzdhN2MxY2U2YzQ0ZDQ2YzRkZjRlY2RjZDcyZDE2NGFjZiIsImFjY291bnQiOjY5NzQ4NiwiYWNjb3VudF9jb2RlIjoiODkyMWU3Yjc0ZTA4NmJkMGQ0NWVhMWIzYTYxYmIxZTkiLCJzY29wZXMiOlsiZ24ucXJjb2Rlcy5wYXkiXSwiZXhwaXJlc0luIjozNjAwLCJjb25maWd1cmF0aW9uIjp7Ing1dCNTMjU2IjoiZmk0dkdpTk84TlJ0SjBmME9GaFE4c3ltNHFQOVNmeFZZaHYwWjNESEZybz0ifSwiaWF0IjoxNzM4Njk0NTgxLCJleHAiOjE3Mzg2OTgxODF9.VQPLVGKZZYylpoNCU6rfdaTgIbTVDDb-fDAXL01Lu8M', 'token_type': 'Bearer', 'expires_in': 3600, 'scope': 'gn.qrcodes.pay'}
+INFO 2025-02-04 15:43:01,212 services Criando cobrança PIX: valor=0.1, descricao=Compra de produto
+DEBUG 2025-02-04 15:43:01,212 services Payload da cobrança: {'calendario': {'expiracao': 3600}, 'valor': {'original': '0.10'}, 'chave': '0b1508a2-a6e3-40be-b171-033c4968e5d1', 'solicitacaoPagador': 'Compra de produto'}
+ERROR 2025-02-04 15:43:01,702 services Erro ao criar cobrança PIX: Erro ao criar cobrança: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 170, in criar_cobranca
+    raise Exception(f"Erro ao criar cobrança: {response.text}")
+Exception: Erro ao criar cobrança: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+ERROR 2025-02-04 15:43:01,704 views Erro no processamento do pagamento: Erro ao criar cobrança: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\views.py", line 21, in processar_pagamento
+    resultado = pix_service.criar_cobranca(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 170, in criar_cobranca
+    raise Exception(f"Erro ao criar cobrança: {response.text}")
+Exception: Erro ao criar cobrança: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+INFO 2025-02-04 15:44:08,095 services Inicializando PixService com certificado: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\producao-697486-Padaria.p12
+INFO 2025-02-04 15:44:08,167 services Certificado preparado com sucesso
+INFO 2025-02-04 15:44:08,714 services Token de acesso obtido com sucesso
+DEBUG 2025-02-04 15:44:08,714 services Resposta completa do token: {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiYWNjZXNzX3Rva2VuIiwiY2xpZW50SWQiOiJDbGllbnRfSWRfNWJiMWI1MzdhN2MxY2U2YzQ0ZDQ2YzRkZjRlY2RjZDcyZDE2NGFjZiIsImFjY291bnQiOjY5NzQ4NiwiYWNjb3VudF9jb2RlIjoiODkyMWU3Yjc0ZTA4NmJkMGQ0NWVhMWIzYTYxYmIxZTkiLCJzY29wZXMiOlsiZ24ucXJjb2Rlcy5wYXkiXSwiZXhwaXJlc0luIjozNjAwLCJjb25maWd1cmF0aW9uIjp7Ing1dCNTMjU2IjoiZmk0dkdpTk84TlJ0SjBmME9GaFE4c3ltNHFQOVNmeFZZaHYwWjNESEZybz0ifSwiaWF0IjoxNzM4Njk0NjQ4LCJleHAiOjE3Mzg2OTgyNDh9.h2G9Cqthl-pe1jKy-WPFC50yYZdTfsAzDNxBo9vagOM', 'token_type': 'Bearer', 'expires_in': 3600, 'scope': 'gn.qrcodes.pay'}
+INFO 2025-02-04 15:44:08,717 services Criando cobrança PIX: valor=0.1, descricao=Compra de produto
+DEBUG 2025-02-04 15:44:08,718 services Payload da cobrança: {'calendario': {'expiracao': 3600}, 'valor': {'original': '0.10'}, 'chave': '0b1508a2-a6e3-40be-b171-033c4968e5d1', 'solicitacaoPagador': 'Compra de produto'}
+ERROR 2025-02-04 15:44:09,217 services Erro ao criar cobrança PIX: Erro ao criar cobrança: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 170, in criar_cobranca
+    raise Exception(f"Erro ao criar cobrança: {response.text}")
+Exception: Erro ao criar cobrança: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+ERROR 2025-02-04 15:44:09,218 views Erro no processamento do pagamento: Erro ao criar cobrança: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\views.py", line 21, in processar_pagamento
+    resultado = pix_service.criar_cobranca(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 170, in criar_cobranca
+    raise Exception(f"Erro ao criar cobrança: {response.text}")
+Exception: Erro ao criar cobrança: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+INFO 2025-02-04 15:46:28,255 services Inicializando PixService com certificado: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\producao-697486-Padaria.p12
+INFO 2025-02-04 15:46:28,323 services Certificado preparado com sucesso
+INFO 2025-02-04 15:46:28,879 services Token de acesso obtido com sucesso
+DEBUG 2025-02-04 15:46:28,879 services Resposta completa do token: {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiYWNjZXNzX3Rva2VuIiwiY2xpZW50SWQiOiJDbGllbnRfSWRfNWJiMWI1MzdhN2MxY2U2YzQ0ZDQ2YzRkZjRlY2RjZDcyZDE2NGFjZiIsImFjY291bnQiOjY5NzQ4NiwiYWNjb3VudF9jb2RlIjoiODkyMWU3Yjc0ZTA4NmJkMGQ0NWVhMWIzYTYxYmIxZTkiLCJzY29wZXMiOlsiZ24ucXJjb2Rlcy5wYXkiXSwiZXhwaXJlc0luIjozNjAwLCJjb25maWd1cmF0aW9uIjp7Ing1dCNTMjU2IjoiZmk0dkdpTk84TlJ0SjBmME9GaFE4c3ltNHFQOVNmeFZZaHYwWjNESEZybz0ifSwiaWF0IjoxNzM4Njk0Nzg4LCJleHAiOjE3Mzg2OTgzODh9.82ZPSyNY_HrVezfnAJB9p_s9WxjebjjSPFsusr3bWs4', 'token_type': 'Bearer', 'expires_in': 3600, 'scope': 'gn.qrcodes.pay'}
+INFO 2025-02-04 15:46:28,879 services Criando cobrança PIX: valor=0.1, descricao=Compra de produto
+DEBUG 2025-02-04 15:46:28,879 services Payload da cobrança: {'calendario': {'expiracao': 3600}, 'valor': {'original': '0.10'}, 'chave': '0b1508a2-a6e3-40be-b171-033c4968e5d1', 'solicitacaoPagador': 'Compra de produto'}
+ERROR 2025-02-04 15:46:29,371 services Erro ao criar cobrança PIX: Erro ao criar cobrança: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 170, in criar_cobranca
+    raise Exception(f"Erro ao criar cobrança: {response.text}")
+Exception: Erro ao criar cobrança: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+ERROR 2025-02-04 15:46:29,373 views Erro no processamento do pagamento: Erro ao criar cobrança: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\views.py", line 21, in processar_pagamento
+    resultado = pix_service.criar_cobranca(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 170, in criar_cobranca
+    raise Exception(f"Erro ao criar cobrança: {response.text}")
+Exception: Erro ao criar cobrança: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+INFO 2025-02-04 15:51:50,186 services Inicializando PixService com certificado: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\producao-697486-Padaria.p12
+INFO 2025-02-04 15:51:50,262 services Certificado preparado com sucesso
+INFO 2025-02-04 15:51:50,809 services Token de acesso obtido com sucesso
+DEBUG 2025-02-04 15:51:50,810 services Resposta completa do token: {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiYWNjZXNzX3Rva2VuIiwiY2xpZW50SWQiOiJDbGllbnRfSWRfNWJiMWI1MzdhN2MxY2U2YzQ0ZDQ2YzRkZjRlY2RjZDcyZDE2NGFjZiIsImFjY291bnQiOjY5NzQ4NiwiYWNjb3VudF9jb2RlIjoiODkyMWU3Yjc0ZTA4NmJkMGQ0NWVhMWIzYTYxYmIxZTkiLCJzY29wZXMiOlsiZ24ucXJjb2Rlcy5wYXkiXSwiZXhwaXJlc0luIjozNjAwLCJjb25maWd1cmF0aW9uIjp7Ing1dCNTMjU2IjoiZmk0dkdpTk84TlJ0SjBmME9GaFE4c3ltNHFQOVNmeFZZaHYwWjNESEZybz0ifSwiaWF0IjoxNzM4Njk1MTEwLCJleHAiOjE3Mzg2OTg3MTB9.pgmQelgO0uX9gqTJSJSPfxJKn6Uir4bzCzS4G-eB-ck', 'token_type': 'Bearer', 'expires_in': 3600, 'scope': 'gn.qrcodes.pay'}
+INFO 2025-02-04 15:51:50,813 services Criando QR Code PIX: valor=0.1, descricao=Compra de produto
+DEBUG 2025-02-04 15:51:50,814 services Payload do QR Code: {'valor': {'original': '0.10'}, 'pagador': {'solicitacaoPagador': 'Compra de produto'}, 'chave': '0b1508a2-a6e3-40be-b171-033c4968e5d1'}
+DEBUG 2025-02-04 15:51:51,299 services Resposta da criação do QR Code: {"nome":"nao_encontrado","mensagem":"Recurso não encontrado"}
+ERROR 2025-02-04 15:51:51,300 services Erro ao gerar QR Code PIX: Erro ao gerar QR Code: {"nome":"nao_encontrado","mensagem":"Recurso não encontrado"}
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 175, in criar_cobranca
+    raise Exception(f"Erro ao gerar QR Code: {response.text}")
+Exception: Erro ao gerar QR Code: {"nome":"nao_encontrado","mensagem":"Recurso não encontrado"}
+ERROR 2025-02-04 15:51:51,300 views Erro no processamento do pagamento: Erro ao gerar QR Code PIX: Erro ao gerar QR Code: {"nome":"nao_encontrado","mensagem":"Recurso não encontrado"}
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 175, in criar_cobranca
+    raise Exception(f"Erro ao gerar QR Code: {response.text}")
+Exception: Erro ao gerar QR Code: {"nome":"nao_encontrado","mensagem":"Recurso não encontrado"}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\views.py", line 21, in processar_pagamento
+    resultado = pix_service.criar_cobranca(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 190, in criar_cobranca
+    raise Exception(f"Erro ao gerar QR Code PIX: {str(e)}")
+Exception: Erro ao gerar QR Code PIX: Erro ao gerar QR Code: {"nome":"nao_encontrado","mensagem":"Recurso não encontrado"}
+INFO 2025-02-04 15:52:45,283 services Inicializando PixService com certificado: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\producao-697486-Padaria.p12
+INFO 2025-02-04 15:52:45,349 services Certificado preparado com sucesso
+INFO 2025-02-04 15:52:45,911 services Token de acesso obtido com sucesso
+DEBUG 2025-02-04 15:52:45,911 services Resposta completa do token: {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiYWNjZXNzX3Rva2VuIiwiY2xpZW50SWQiOiJDbGllbnRfSWRfNWJiMWI1MzdhN2MxY2U2YzQ0ZDQ2YzRkZjRlY2RjZDcyZDE2NGFjZiIsImFjY291bnQiOjY5NzQ4NiwiYWNjb3VudF9jb2RlIjoiODkyMWU3Yjc0ZTA4NmJkMGQ0NWVhMWIzYTYxYmIxZTkiLCJzY29wZXMiOlsiZ24ucXJjb2Rlcy5wYXkiXSwiZXhwaXJlc0luIjozNjAwLCJjb25maWd1cmF0aW9uIjp7Ing1dCNTMjU2IjoiZmk0dkdpTk84TlJ0SjBmME9GaFE4c3ltNHFQOVNmeFZZaHYwWjNESEZybz0ifSwiaWF0IjoxNzM4Njk1MTY1LCJleHAiOjE3Mzg2OTg3NjV9.44xYBHzT68900Ve8HarjmwVnBCvY1_-fZTHcyRkRVaE', 'token_type': 'Bearer', 'expires_in': 3600, 'scope': 'gn.qrcodes.pay'}
+INFO 2025-02-04 15:52:45,914 services Criando location PIX: valor=0.1, descricao=Compra de produto
+DEBUG 2025-02-04 15:52:45,915 services Payload do location: {'tipoCob': 'cob', 'calendario': {'expiracao': 3600}, 'valor': {'original': '0.10'}, 'chave': '0b1508a2-a6e3-40be-b171-033c4968e5d1', 'solicitacaoPagador': 'Compra de produto'}
+DEBUG 2025-02-04 15:52:46,402 services Resposta da criação do location: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+ERROR 2025-02-04 15:52:46,403 services Erro ao gerar QR Code PIX: Erro ao criar location: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 173, in criar_cobranca
+    raise Exception(f"Erro ao criar location: {response.text}")
+Exception: Erro ao criar location: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+ERROR 2025-02-04 15:52:46,405 views Erro no processamento do pagamento: Erro ao gerar QR Code PIX: Erro ao criar location: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 173, in criar_cobranca
+    raise Exception(f"Erro ao criar location: {response.text}")
+Exception: Erro ao criar location: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\views.py", line 21, in processar_pagamento
+    resultado = pix_service.criar_cobranca(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 200, in criar_cobranca
+    raise Exception(f"Erro ao gerar QR Code PIX: {str(e)}")
+Exception: Erro ao gerar QR Code PIX: Erro ao criar location: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+INFO 2025-02-04 15:53:24,528 services Inicializando PixService com certificado: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\producao-697486-Padaria.p12
+INFO 2025-02-04 15:53:24,596 services Certificado preparado com sucesso
+INFO 2025-02-04 15:53:25,138 services Token de acesso obtido com sucesso
+DEBUG 2025-02-04 15:53:25,139 services Resposta completa do token: {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiYWNjZXNzX3Rva2VuIiwiY2xpZW50SWQiOiJDbGllbnRfSWRfNWJiMWI1MzdhN2MxY2U2YzQ0ZDQ2YzRkZjRlY2RjZDcyZDE2NGFjZiIsImFjY291bnQiOjY5NzQ4NiwiYWNjb3VudF9jb2RlIjoiODkyMWU3Yjc0ZTA4NmJkMGQ0NWVhMWIzYTYxYmIxZTkiLCJzY29wZXMiOlsiZ24ucXJjb2Rlcy5wYXkiXSwiZXhwaXJlc0luIjozNjAwLCJjb25maWd1cmF0aW9uIjp7Ing1dCNTMjU2IjoiZmk0dkdpTk84TlJ0SjBmME9GaFE4c3ltNHFQOVNmeFZZaHYwWjNESEZybz0ifSwiaWF0IjoxNzM4Njk1MjA1LCJleHAiOjE3Mzg2OTg4MDV9.OFZCOeie5PObE7KHB_cxFpv9Kn-zNtiHKvt9LGMsg28', 'token_type': 'Bearer', 'expires_in': 3600, 'scope': 'gn.qrcodes.pay'}
+INFO 2025-02-04 15:53:25,143 services Criando location PIX: valor=0.1, descricao=Compra de produto
+DEBUG 2025-02-04 15:53:25,144 services Payload do location: {'tipoCob': 'cob', 'calendario': {'expiracao': 3600}, 'valor': {'original': '0.10'}, 'chave': '0b1508a2-a6e3-40be-b171-033c4968e5d1', 'solicitacaoPagador': 'Compra de produto'}
+DEBUG 2025-02-04 15:53:25,639 services Resposta da criação do location: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+ERROR 2025-02-04 15:53:25,639 services Erro ao gerar QR Code PIX: Erro ao criar location: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 173, in criar_cobranca
+    raise Exception(f"Erro ao criar location: {response.text}")
+Exception: Erro ao criar location: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+ERROR 2025-02-04 15:53:25,639 views Erro no processamento do pagamento: Erro ao gerar QR Code PIX: Erro ao criar location: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 173, in criar_cobranca
+    raise Exception(f"Erro ao criar location: {response.text}")
+Exception: Erro ao criar location: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\views.py", line 21, in processar_pagamento
+    resultado = pix_service.criar_cobranca(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 200, in criar_cobranca
+    raise Exception(f"Erro ao gerar QR Code PIX: {str(e)}")
+Exception: Erro ao gerar QR Code PIX: Erro ao criar location: {"error":"insufficient_scope","error_description":"Access token has insufficient scope"}
+INFO 2025-02-04 15:54:36,823 services Inicializando PixService com certificado: C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\certs\producao-697486-Padaria.p12
+INFO 2025-02-04 15:54:36,892 services Certificado preparado com sucesso
+INFO 2025-02-04 15:54:37,438 services Token de acesso obtido com sucesso
+DEBUG 2025-02-04 15:54:37,439 services Resposta completa do token: {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiYWNjZXNzX3Rva2VuIiwiY2xpZW50SWQiOiJDbGllbnRfSWRfNWJiMWI1MzdhN2MxY2U2YzQ0ZDQ2YzRkZjRlY2RjZDcyZDE2NGFjZiIsImFjY291bnQiOjY5NzQ4NiwiYWNjb3VudF9jb2RlIjoiODkyMWU3Yjc0ZTA4NmJkMGQ0NWVhMWIzYTYxYmIxZTkiLCJzY29wZXMiOlsiZ24ucXJjb2Rlcy5wYXkiXSwiZXhwaXJlc0luIjozNjAwLCJjb25maWd1cmF0aW9uIjp7Ing1dCNTMjU2IjoiZmk0dkdpTk84TlJ0SjBmME9GaFE4c3ltNHFQOVNmeFZZaHYwWjNESEZybz0ifSwiaWF0IjoxNzM4Njk1Mjc3LCJleHAiOjE3Mzg2OTg4Nzd9.zl5P9B0HHItNKemr6OVr6SfB8YkQ95vSaFm2YXKue4Y', 'token_type': 'Bearer', 'expires_in': 3600, 'scope': 'gn.qrcodes.pay'}
+INFO 2025-02-04 15:54:37,443 services Criando QR Code estático PIX: valor=0.1, descricao=Compra de produto
+DEBUG 2025-02-04 15:54:37,444 services Payload do QR Code: {'pix': {'receberSemChave': False, 'chave': '0b1508a2-a6e3-40be-b171-033c4968e5d1'}, 'valor': {'original': '0.10'}, 'recebedor': {'nome': 'Padaria'}, 'infoAdicionais': [{'nome': 'Pagamento', 'valor': 'Compra de produto'}]}
+DEBUG 2025-02-04 15:54:37,929 services Resposta da criação do QR Code: {"nome":"nao_encontrado","mensagem":"Recurso não encontrado"}
+ERROR 2025-02-04 15:54:37,929 services Erro ao gerar QR Code PIX: Erro ao gerar QR Code: {"nome":"nao_encontrado","mensagem":"Recurso não encontrado"}
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 184, in criar_cobranca
+    raise Exception(f"Erro ao gerar QR Code: {response.text}")
+Exception: Erro ao gerar QR Code: {"nome":"nao_encontrado","mensagem":"Recurso não encontrado"}
+ERROR 2025-02-04 15:54:37,936 views Erro no processamento do pagamento: Erro ao gerar QR Code PIX: Erro ao gerar QR Code: {"nome":"nao_encontrado","mensagem":"Recurso não encontrado"}
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 184, in criar_cobranca
+    raise Exception(f"Erro ao gerar QR Code: {response.text}")
+Exception: Erro ao gerar QR Code: {"nome":"nao_encontrado","mensagem":"Recurso não encontrado"}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\views.py", line 21, in processar_pagamento
+    resultado = pix_service.criar_cobranca(
+  File "C:\Users\87337274068\Desktop\aulas_trilha_python\aula44\sistema_de_compras\buy_app\services.py", line 199, in criar_cobranca
+    raise Exception(f"Erro ao gerar QR Code PIX: {str(e)}")
+Exception: Erro ao gerar QR Code PIX: Erro ao gerar QR Code: {"nome":"nao_encontrado","mensagem":"Recurso não encontrado"}

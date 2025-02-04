@@ -126,12 +126,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'templates/static')]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Gerencianet
-GERENCIANET_CLIENT_ID = 'Client_Id_5bb1b537a7c1ce6c44d46c4df4ecdcd72d164acf'
-GERENCIANET_CLIENT_SECRET = 'Client_Secret_5e1702e09ef7797af49700cd188f8730016dd2f5'
-GERENCIANET_SANDBOX = False
-GERENCIANET_PIX_KEY = '0b1508a2-a6e3-40be-b171-033c4968e5d1'
-GERENCIANET_CERT_PATH = os.path.join(BASE_DIR, 'buy_app', 'certs', 'producao.p12')
 
-# QR Code
+# Media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
