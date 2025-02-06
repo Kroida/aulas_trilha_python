@@ -67,3 +67,9 @@ Este repositório contém as aulas e desafios relacionados à biblioteca Tkinter
 - Layout bonito
 - Compra de item
 - Validações e prevenções
+
+### Aula 45: Fazendo um cassino
+- Sistema de apostas
+- Gráfico dos ganhos
+
+### Aula 46: Resolvendo desafios de Python

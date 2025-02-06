@@ -1,8 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse, JsonResponse
-import logging
-
-logger = logging.getLogger('buy_app')
 
 # Create your views here.
 def index(request):

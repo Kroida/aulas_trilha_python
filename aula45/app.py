@@ -3,8 +3,9 @@ import random
 import itertools
 from time import sleep
 import os
+from matplotlib import pyplot as plt
 
-def BaseMachine(ABC):
+class BaseMachine(ABC):
     @abstractmethod
     def gen_permutations(self):
         pass
@@ -75,12 +76,34 @@ class CassaNiquel:
             
     def _play(self, amount_bet, player: Player):
         result = self._get_final_result()
-        self._display(amount_bet, result)
+        # self._display(amount_bet, result)
         self._update_balance(amount_bet, result, player)
-
+        
+    @property
+    def gain(self):
+        return self.initial_balance + self.balance
+    
 maquina1 = CassaNiquel(level = 1)
-player1 = Player()
-maquina1._play(10, player1)
+        
+JOGADORES_POR_DIA = 100
+APOSTAS_POR_DIA = 5
+DIAS = 10
+VALOR_MAXIMO = 200
 
-print(player1.balance)
+saldo = []
 
+players = [Player() for i in range(JOGADORES_POR_DIA)]
+
+for i in range(0, DIAS):
+    for j in players:
+        for k in range(0, random.randint(1, APOSTAS_POR_DIA)):
+            maquina1._play(random.randint(5, VALOR_MAXIMO), j)
+    saldo.append(maquina1.gain)
+
+plt.figure()
+x = [i for i in range(1, DIAS+1)]
+plt.plot(x, saldo)
+plt.xlabel('Dias')
+plt.ylabel('Saldo')
+plt.title('Saldo da Máquina ao Longo dos Dias')
+plt.show()
