@@ -72,4 +72,9 @@ Este repositório contém as aulas e desafios relacionados à biblioteca Tkinter
 - Sistema de apostas
 - Gráfico dos ganhos
 
-### Aula 46: Resolvendo desafios de Python
+### Aula 46: Resolvendo alguns desafios de Python
+- Realizando alguns desafios do wiki.python
+- https://wiki.python.org.br/EstruturaDeRepeticao
+
+### Aula 47: Relatorio de análise dos meus valores
+- Gráfico aranha usando matplotlib e numpy

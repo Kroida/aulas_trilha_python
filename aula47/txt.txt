@@ -1,0 +1,84 @@
+### **📊 Relatório de Análise dos Valores - Resposta 6**  
+**Data e Hora:** 07/02/2025 14:43:56  
+
+---
+
+## **🔎 Identificação dos Principais Valores**  
+
+1️⃣ **Conhecimento e Crescimento Pessoal (5/5)** 📚  
+   - Máxima prioridade na escala.  
+   - Escolheu **"Investir em um novo negócio ou aprendizado"**, demonstrando um forte desejo de evolução contínua e busca por novos horizontes.  
+   - Sua visão de sucesso está conectada a **"Paixão e propósito"**, mostrando foco no alinhamento entre emoções e metas.  
+
+2️⃣ **Liberdade e Independência (5/5)** 🦅  
+   - Altamente priorizado, refletindo a necessidade de autonomia e autodeterminação.  
+   - Escolheu o superpoder **"Poder viajar no tempo e aprender tudo"**, reforçando curiosidade intelectual e desejo de controle sobre a jornada pessoal.  
+
+3️⃣ **Realização Profissional (5/5)** 💼  
+   - Também altamente priorizado.  
+   - A escolha por **"Usaria para garantir estabilidade financeira"** indica um equilíbrio entre segurança e ambição profissional.  
+
+⚠️ **Menos Prioritários:**  
+- **Família e Relacionamentos (3/5):** Valorizado, mas com menor peso em relação a outros valores.  
+- **Contribuição Social (3/5):** Importante, mas não é o foco principal no momento.  
+
+---
+
+## **💡 Perfil Baseado nos Valores Identificados**  
+
+✔️ **Tomada de Decisão:**  
+- Decisões guiadas por aprendizado e liberdade, com ênfase na busca por propósito e crescimento.  
+- O foco está em equilibrar ambição e segurança financeira.  
+
+✔️ **Estilo Profissional:**  
+- Prefere carreiras que ofereçam espaço para inovação, aprendizado e impacto.  
+- Ideal para empreendimentos ou projetos que permitam combinar crescimento pessoal e profissional.  
+
+✔️ **Relações Pessoais:**  
+- Valorização moderada de conexões interpessoais, com maior foco no autodesenvolvimento.  
+- Busca por relações que complementem suas metas e valores.  
+
+---
+
+### **📌 Recomendações Baseadas nos Valores**  
+
+✅ **Carreira:**  
+- Invista em áreas que combinem inovação e aprendizado, como startups ou consultorias em desenvolvimento pessoal e negócios.  
+- Procure papéis que exijam criatividade e propósito, com liberdade para crescer.  
+
+✅ **Relacionamentos:**  
+- Construa conexões com pessoas que valorizem seu desejo por crescimento e propósito.  
+
+✅ **Desenvolvimento Pessoal:**  
+- Continue investindo em novos conhecimentos e experiências que fortaleçam sua independência e paixão por aprender.  
+- Estabeleça metas claras que alinhem ambição profissional com estabilidade financeira.  
+
+---
+
+### **📊 Visualização dos Valores (Gráfico Radar)**  
+Vou gerar o gráfico radar para representar a hierarquia de valores com base nesta resposta. 🎯
+
+O gráfico para a Resposta 6 foi gerado corretamente, mas houve um problema ao exibi-lo ou disponibilizá-lo para download.
+
+Se preferir, posso consolidar todas as respostas e gráficos em um único relatório detalhado no formato Markdown ou tentar outra abordagem para salvar o gráfico. Me avise como deseja proceder! 😊
+# Definir os valores das categorias para a Resposta 6
+values = [5, 3, 5, 3, 5]  # Realização Profissional, Família, Liberdade, Contribuição, Conhecimento
+
+# Fechar o gráfico conectando o último valor ao primeiro
+values += values[:1]
+
+# Recriar o gráfico radar para a Resposta 6
+fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True))
+ax.fill(angles, values, color='red', alpha=0.25)
+ax.plot(angles, values, color='red', linewidth=2)
+
+# Adicionar rótulos
+ax.set_xticks(angles[:-1])
+ax.set_xticklabels(labels, fontsize=12)
+ax.set_yticklabels([])  # Remover rótulos do eixo radial
+
+# Título
+plt.title("Perfil de Valores Pessoais - Resposta 6", fontsize=14, fontweight="bold")
+
+# Exibir o gráfico
+plt.show()
