@@ -78,3 +78,6 @@ Este repositório contém as aulas e desafios relacionados à biblioteca Tkinter
 
 ### Aula 47: Relatorio de análise dos meus valores
 - Gráfico aranha usando matplotlib e numpy
+
+### Aula 48: Desafios do professor
+- Coisas
