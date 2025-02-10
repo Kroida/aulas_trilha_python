@@ -32,8 +32,6 @@ Este repositório contém as aulas e desafios relacionados à biblioteca Tkinter
 ### Aula 36: Jogo de Bingo
 - Criação de um jogo simples de Bingo com Tkinter.
 
-### SEMPRE CRIAR A PASTA .VENV ANTES DE INSTALAR UMA BIBLIOTECA COM DJANGO.
-
 ### Aula 37: Introdução à biblioteca Django
 - Primeiros passos com o Django para desenvolvimento web.
 - **Nota**: A segunda pasta chamada "auladedjango" deveria ser renomeada para "my_project".
@@ -81,3 +79,7 @@ Este repositório contém as aulas e desafios relacionados à biblioteca Tkinter
 
 ### Aula 48: Desafios do professor
 - Coisas
+
+### Aula 49: Desafio MicroSAAS
+- O objetivo deste exercício é construir um **Micro SaaS** básico utilizando **Django**. A aplicação permitirá a **gestão de assinaturas de usuários**, oferecendo diferentes planos de serviço. O sistema permitirá o cadastro e a administração de usuários, planos disponíveis e assinaturas ativas, garantindo que cada usuário esteja associado a um plano específico.
+- A aplicação seguirá a arquitetura **Model-View-Template (MVT)** do Django, utilizando o banco de dados **SQLite** por padrão, mas permitindo a adaptação para outros bancos.
