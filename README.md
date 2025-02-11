@@ -49,19 +49,19 @@ Este repositório contém as aulas e desafios relacionados à biblioteca Tkinter
 - Técnicas de banco de dados.
 - Resolução de problemas.
 
-### Aula 41: Tentando criar um site de ações
+### Aula 41: Tentando criar um site de ações com Django
 - Fracasso 1
 - Fracasso 2
 
-### Aula 42: Pythonando: Introdução ao Django
+### Aula 42: Pythonando: Re-introdução ao Django
 - Entendendo arquitetura
 - Executando conceitos
 
-### Aula 43: Pythonando: Introdução ao Django - final
+### Aula 43: Pythonando: Re-Introdução ao Django - final
 - Criando uma classe em models
 - Entendendo a parte administrativa
 
-### Aula 44: Fazendo um sistema de compras
+### Aula 44: Fazendo um sistema de compras com Django
 - Layout bonito
 - Compra de item
 - Validações e prevenções
@@ -80,6 +80,8 @@ Este repositório contém as aulas e desafios relacionados à biblioteca Tkinter
 ### Aula 48: Desafios do professor
 - Coisas
 
-### Aula 49: Desafio MicroSAAS
+### Aula 49: Desafio MicroSAAS com Django
 - O objetivo deste exercício é construir um **Micro SaaS** básico utilizando **Django**. A aplicação permitirá a **gestão de assinaturas de usuários**, oferecendo diferentes planos de serviço. O sistema permitirá o cadastro e a administração de usuários, planos disponíveis e assinaturas ativas, garantindo que cada usuário esteja associado a um plano específico.
 - A aplicação seguirá a arquitetura **Model-View-Template (MVT)** do Django, utilizando o banco de dados **SQLite** por padrão, mas permitindo a adaptação para outros bancos.
+
+### Aula 50: Introdução ao Flet
